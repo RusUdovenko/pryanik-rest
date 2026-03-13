@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Программа лояльности — Пряник</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="header__container">
+                <div class="header__left">
+                    <a href="index.html" class="header__logo">
+                        <strong>Пряник</strong>
+                    </a>
+                </div>
+                
+                <nav class="header__nav desktop-nav">
+                    <ul class="header__menu">
+                        <li><a href="index.html#about-block">О нас</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="banketi.html">Банкеты</a></li>
+                        <li><a href="index.html#interior-block">Интерьер</a></li>
+                        <li><a href="index.html#events-block">Мероприятия</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                        <li><a href="index.html#review-block">Оставить отзыв</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__right">
+                    <div class="header__contacts">
+                        <div class="header__contacts-top">
+                            <a href="tel:89114004343">+7 (911) 400-43-43</a>, ул. Правды, 38Б
+                        </div>
+                        <div class="header__hours">
+                            Режим работы: ежедневно с 12:00 до 21:00
+                        </div>
+                    </div>
+                    <div class="header__social">
+                        <a href="https://vk.com/restoran_pryanik" target="_blank" class="social-link" aria-label="VK">
+                            <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="burger-menu">
+                        <button class="burger-button" aria-label="Меню">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Мобильное меню -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__close-wrapper"></div>
+                <div class="mobile-menu__container">
+                    <div class="mobile-menu__logo-wrapper">
+                        <div class="mobile-menu__logo">Пряник</div>
+                    </div>
+                    <ul class="mobile-menu__list">
+                        <li><a href="index.html#about-block">О нас</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="banketi.html">Банкеты</a></li>
+                        <li><a href="index.html#interior-block">Интерьер</a></li>
+                        <li><a href="index.html#events-block">Мероприятия</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                        <li><a href="index.html#review-block">Оставить отзыв</a></li>
+                    </ul>
+                    <div class="mobile-menu__contacts">
+                        <a href="tel:89114004343" class="mobile-menu__phone">+7 (911) 400-43-43</a>
+                        <p class="mobile-menu__address">ул. Правды, 38Б</p>
+                        <p class="mobile-menu__hours">ежедневно 12:00-21:00</p>
+                        <div class="mobile-menu__social">
+                            <a href="https://vk.com/restoran_pryanik" target="_blank" class="social-link" aria-label="VK">
+                                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- БЛОК 1: Hero -->
+        <div class="loyalty-hero-outer animate-on-scroll">
+            <div class="loyalty-hero">
+                <div class="loyalty-hero__carrier" style="background-image: url('image/Фото.png');"></div>
+                <div class="loyalty-hero__filter"></div>
+                <div class="loyalty-hero__container">
+                    <div class="loyalty-hero__wrapper">
+                        <div class="loyalty-hero__content">
+                            <div class="loyalty-hero__title">
+                                <strong>Программа лояльности</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loyalty-hero__arrow" onclick="document.getElementById('loyalty-program').scrollIntoView({behavior: 'smooth'});">
+                    <div class="loyalty-hero__arrow-wrapper loyalty-hero__arrow-wrapper_animated">
+                        <svg class="loyalty-hero__arrow-svg" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592">
+                            <g>
+                                <path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 2: Карточка программы -->
+        <div class="loyalty-program-block animate-on-scroll" id="loyalty-program">
+            <div class="loyalty-program-container">
+                <div class="loyalty-program-image-col">
+                    <div class="loyalty-program-image-wrapper">
+                        <div class="loyalty-program-image" style="background-image: url('image/loyalty3.jpg');"></div>
+                    </div>
+                </div>
+                <div class="loyalty-program-text-col">
+                    <div class="loyalty-program-text-wrapper">
+                        <div class="loyalty-program-text-content">
+                            <div class="loyalty-program-text-inner">
+                                <div class="loyalty-program-title">
+                                    <strong>«Друзья Пряника»</strong> - клуб для тех, кто ценит уют и домашнее тепло
+                                </div>
+                                <div class="loyalty-program-divider"></div>
+                                <div class="loyalty-program-descr">
+                                    <strong>Как это работает:</strong><br>
+                                    С каждой покупки начисляются бонусы - просто сообщите официанту свой номер телефона или покажите электронную карту.<br><br>
+                                    <strong>Уровни клуба:</strong><br>
+                                    • Новый друг - 3% бонусов (до 20 000 ₽)<br>
+                                    • Хороший друг - 5% (до 50 000 ₽)<br>
+                                    • Лучший друг - 7% (до 100 000 ₽)<br>
+                                    • Пряник - 10% (более 100 000 ₽)<br><br>
+                                    Гости могут копить бонусы в размере от 3% до 10% от суммы чека и оплачивать ими до 30% стоимости заказа.<br><br>
+                                    Присоединяйтесь и будьте ближе к «Прянику» ❤️
+                                </div>
+                                <a class="loyalty-program-btn" href="#">Заполнить форму</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 3: Текстовый блок на темном фоне -->
+        <div class="loyalty-features-block animate-on-scroll">
+            <div class="loyalty-features-outer">
+                <div class="loyalty-features-cover">
+                    <div class="loyalty-features__carrier" style="background-image: url('image/Фото.png');"></div>
+                    <div class="loyalty-features__filter"></div>
+                    <div class="loyalty-features__container">
+                        <div class="loyalty-features__wrapper">
+                            <div class="loyalty-features__content">
+                                <div class="loyalty-features__subtitle">
+                                    «Пряник» знает своих гостей и делает для них чуть больше, чем просто подает еду
+                                </div>
+                                <div class="loyalty-features__descr">
+                                    <strong>Бонусами можно оплатить до 30% от суммы текущего счета</strong>
+                                </div>
+                                <div class="loyalty-features__text">
+                                    Программа не действует на банкетные мероприятия<br>
+                                    -<br>
+                                    Бонусы действуют 12 месяцев с момента начисления, после чего сгорают
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Банкеты в ресторане Пряник</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="header__container">
+                <div class="header__left">
+                    <a href="index.html" class="header__logo">
+                        <strong>Пряник</strong>
+                    </a>
+                </div>
+                
+                <nav class="header__nav desktop-nav">
+                    <ul class="header__menu">
+                        <li><a href="index.html#about-block">О нас</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="banketi.html">Банкеты</a></li>
+                        <li><a href="index.html#interior-block">Интерьер</a></li>
+                        <li><a href="index.html#events-block">Мероприятия</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                        <li><a href="index.html#review-block">Оставить отзыв</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__right">
+                    <div class="header__contacts">
+                        <div class="header__contacts-top">
+                            <a href="tel:89114004343">+7 (911) 400-43-43</a>, ул. Правды, 38Б
+                        </div>
+                        <div class="header__hours">
+                            Режим работы: ежедневно с 12:00 до 21:00
+                        </div>
+                    </div>
+                    <div class="header__social">
+                        <a href="https://vk.com/restoran_pryanik" target="_blank" class="social-link" aria-label="VK">
+                            <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="burger-menu">
+                        <button class="burger-button" aria-label="Меню">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Мобильное меню -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__close-wrapper"></div>
+                <div class="mobile-menu__container">
+                    <div class="mobile-menu__logo-wrapper">
+                        <div class="mobile-menu__logo">Пряник</div>
+                    </div>
+                    <ul class="mobile-menu__list">
+                        <li><a href="index.html#about-block">О нас</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="banketi.html">Банкеты</a></li>
+                        <li><a href="index.html#interior-block">Интерьер</a></li>
+                        <li><a href="index.html#events-block">Мероприятия</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                        <li><a href="index.html#review-block">Оставить отзыв</a></li>
+                    </ul>
+                    <div class="mobile-menu__contacts">
+                        <a href="tel:89114004343" class="mobile-menu__phone">+7 (911) 400-43-43</a>
+                        <p class="mobile-menu__address">ул. Правды, 38Б</p>
+                        <p class="mobile-menu__hours">ежедневно 12:00-21:00</p>
+                        <div class="mobile-menu__social">
+                            <a href="https://vk.com/restoran_pryanik" target="_blank" class="social-link" aria-label="VK">
+                                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- БЛОК 1: Hero с изображением -->
+        <div class="banquet-hero animate-on-scroll">
+            <div class="banquet-hero__carrier" id="coverCarry">
+                <div class="banquet-hero__image-bg" style="background-image: url('video/видео.png');"></div>
+            </div>
+            <div class="banquet-hero__filter"></div>
+            <div class="banquet-hero__container">
+                <div class="banquet-hero__wrapper">
+                    <div class="banquet-hero__content">
+                        <div class="banquet-hero__title">
+                            <div style="line-height: 64px;">Ваши мероприятия<br>в ресторане «Пряник»</div>
+                        </div>
+                        <div class="banquet-hero__descr">
+                            <div style="line-height: 30px;">Счастливые моменты для ваших близких можете создать только вы, а мы позаботимся о том, чтобы все прошло на высшем уровне!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banquet-hero__arrow" onclick="document.getElementById('banquet-hall').scrollIntoView({behavior: 'smooth'});">
+                <div class="banquet-hero__arrow-wrapper banquet-hero__arrow-wrapper_animated">
+                    <svg class="banquet-hero__arrow-svg" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592">
+                        <g>
+                            <path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 2: Заголовок с описанием -->
+        <div class="banquet-title-block animate-on-scroll" id="banquet-hall">
+            <div class="banquet-title-container">
+                <div class="banquet-title-col">
+                    <div class="banquet-title">
+                        <div style="font-size: 46px;">Ресторан «Пряник» предлагает уютное пространство для ваших семейных праздников и мероприятий</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 3: Интерьер с видом -->
+        <div class="banquet-interior-block animate-on-scroll">
+            <div class="banquet-wrapper">
+                <div class="banquet-interior-container">
+                    <div class="banquet-interior-image-col">
+                        <div class="banquet-interior-image" style="background-image: url('image/Фото.png');"></div>
+                    </div>
+                    <div class="banquet-interior-text-col">
+                        <div class="banquet-interior-textwrapper">
+                            <div class="banquet-interior-content">
+                                <div class="banquet-interior-title" style="text-align: center;">
+                                    Уютный интерьер
+                                </div>
+                                <div class="banquet-interior-divider"></div>
+                                <div class="banquet-interior-descr" style="text-align: center;">
+                                    Тёплое пространство с элементами домашнего уюта, где каждый гость чувствует себя комфортно. Мы создали атмосферу, в которой хочется собираться всей семьёй.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 4: Любой формат мероприятия -->
+        <div class="banquet-format-block animate-on-scroll">
+            <div class="banquet-wrapper">
+                <div class="banquet-format-container">
+                    <div class="banquet-format-text-col">
+                        <div class="banquet-format-textwrapper">
+                            <div class="banquet-format-content">
+                                <div class="banquet-format-title" style="text-align: center;">
+                                    Разные форматы мероприятия
+                                </div>
+                                <div class="banquet-format-divider"></div>
+                                <div class="banquet-format-descr" style="text-align: center;">
+                                    Мы работаем в форматах: банкет, фуршет, питание туристических групп и лагерей, проведение конференций и др.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banquet-format-image-col">
+                        <div class="banquet-format-image" style="background-image: url('image/Фото.png');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 5: Даже на вашей площадке -->
+        <div class="banquet-catering-block animate-on-scroll">
+            <div class="banquet-wrapper">
+                <div class="banquet-catering-container">
+                    <div class="banquet-catering-image-col">
+                        <div class="banquet-catering-image" style="background-image: url('image/Фото.png');"></div>
+                    </div>
+                    <div class="banquet-catering-text-col">
+                        <div class="banquet-catering-textwrapper">
+                            <div class="banquet-catering-content">
+                                <div class="banquet-catering-title" style="text-align: center;">
+                                    На вашей площадке
+                                </div>
+                                <div class="banquet-catering-divider"></div>
+                                <div class="banquet-catering-descr" style="text-align: center;">
+                                    Можем предоставлять наши услуги в формате выездного обслуживания на вашей площадке.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 6: Зал с проектором и экраном -->
+        <div class="banquet-service-block animate-on-scroll">
+            <div class="banquet-wrapper">
+                <div class="banquet-service-container">
+                    <div class="banquet-service-text-col">
+                        <div class="banquet-service-textwrapper">
+                            <div class="banquet-service-content">
+                                <div class="banquet-service-title" style="text-align: center;">
+                                    Зал с большим экраном
+                                </div>
+                                <div class="banquet-service-divider"></div>
+                                <div class="banquet-service-descr" style="text-align: center;">
+                                    Мы предоставляем проектор и большой экран, чтобы вы могли показывать памятные видео или создавать нужное настроение с помощью фоновых изображений.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banquet-service-image-col">
+                        <div class="banquet-service-image" style="background-image: url('image/Фото.png');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 7: Всё для вашего праздника (перенесен с позиции 8) -->
+        <div class="banquet-necessities-block animate-on-scroll">
+            <div class="banquet-wrapper">
+                <div class="banquet-necessities-container">
+                    <div class="banquet-necessities-image-col">
+                        <div class="banquet-necessities-image" style="background-image: url('image/Фото.png');"></div>
+                    </div>
+                    <div class="banquet-necessities-text-col">
+                        <div class="banquet-necessities-textwrapper">
+                            <div class="banquet-necessities-content">
+                                <div class="banquet-necessities-title" style="text-align: center;">
+                                    Всё для вашего праздника
+                                </div>
+                                <div class="banquet-necessities-divider"></div>
+                                <div class="banquet-necessities-descr" style="text-align: center;">
+                                    При аренде ресторана мы предоставляем праздничную сервировку столов и необходимую посуду.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК 8: Свяжитесь с менеджером -->
+        <div class="banquet-contact-block animate-on-scroll">
+            <div class="banquet-contact-container">
+                <div class="banquet-contact-col">
+                    <div class="banquet-contact-title" style="text-align: center;">
+                        <strong style="font-size: 36px; font-weight: 800;">СВЯЖИТЕСЬ</strong><br>
+                        <strong style="font-size: 36px; font-weight: 800;">С МЕНЕДЖЕРОМ</strong>
+                        <div class="banquet-contact-subtitle" style="margin-top: 15px; font-size: 18px;">
+                            и мы рассчитаем стоимость вашего мероприятия в течение рабочего дня
+                        </div>
+                    </div>
+                    <div class="banquet-contact-descr" style="text-align: center; margin-top: 25px;">
+                        <p style="margin: 10px 0;"><strong>Связаться с нами:</strong><br>+7 (911) 400-43-43 банкетный менеджер Анжелика</p>
+                        <p style="margin: 10px 0;"><strong>Режим работы банкетной службы:</strong><br>Понедельник-пятница 10:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/menu-loader.js"></script>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Пряник — Семейный ресторан</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="header__container">
+                <div class="header__left">
+                    <a href="index.html" class="header__logo">
+                        <strong>Пряник</strong>
+                    </a>
+                </div>
+                
+                <nav class="header__nav desktop-nav">
+                    <ul class="header__menu">
+                        <li><a href="index.html#about-block">О нас</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="banketi.html">Банкеты</a></li>
+                        <li><a href="index.html#interior-block">Интерьер</a></li>
+                        <li><a href="index.html#events-block">Мероприятия</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                        <li><a href="index.html#review-block">Оставить отзыв</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__right">
+                    <div class="header__contacts">
+                        <div class="header__contacts-top">
+                            <a href="tel:89114004343">+7 (911) 400-43-43</a>, ул. Правды, 38Б
+                        </div>
+                        <div class="header__hours">
+                            Режим работы: ежедневно с 12:00 до 21:00
+                        </div>
+                    </div>
+                    <div class="header__social">
+                        <a href="https://vk.com/restoran_pryanik" target="_blank" class="social-link" aria-label="VK">
+                            <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="burger-menu">
+                        <button class="burger-button" aria-label="Меню">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Мобильное меню -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__close-wrapper"></div>
+                <div class="mobile-menu__container">
+                    <div class="mobile-menu__logo-wrapper">
+                        <div class="mobile-menu__logo">Пряник</div>
+                    </div>
+                    <ul class="mobile-menu__list">
+                        <li><a href="index.html#about-block">О нас</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="banketi.html">Банкеты</a></li>
+                        <li><a href="index.html#interior-block">Интерьер</a></li>
+                        <li><a href="index.html#events-block">Мероприятия</a></li>
+                        <li><a href="loyalty.html">Программа лояльности</a></li>
+                        <li><a href="index.html#review-block">Оставить отзыв</a></li>
+                    </ul>
+                    <div class="mobile-menu__contacts">
+                        <a href="tel:89114004343" class="mobile-menu__phone">+7 (911) 400-43-43</a>
+                        <p class="mobile-menu__address">ул. Правды, 38Б</p>
+                        <p class="mobile-menu__hours">ежедневно 12:00-21:00</p>
+                        <div class="mobile-menu__social">
+                            <a href="https://vk.com/restoran_pryanik" target="_blank" class="social-link" aria-label="VK">
+                                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50ZM25 34c.406 19.488 10.15 31.2 27.233 31.2h.968V54.05c6.278.625 11.024 5.216 12.93 11.15H75c-2.436-8.87-8.838-13.773-12.836-15.647C66.162 47.242 71.783 41.62 73.126 34h-8.058c-1.749 6.184-6.932 11.805-11.867 12.336V34h-8.057v21.611C40.147 54.362 33.838 48.304 33.556 34H25Z" fill="#ffffff"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Блок 1: Hero -->
+        <section class="hero animate-on-scroll" id="hero">
+            <div class="hero__bg"></div>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">«ПРЯНИК»<br><span>СЕМЕЙНЫЙ РЕСТОРАН</span></h1>
+                <div class="hero__welcome">Уютное место для детей и взрослых в Петрозаводске</div>
+                <a href="menu.html" class="hero__btn">Меню</a>
+            </div>
+            <div class="hero__arrow" onclick="document.getElementById('events-block').scrollIntoView({behavior: 'smooth'});">
+                <div class="hero__arrow-wrapper">
+                    <svg class="hero__arrow-svg" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592">
+                        <path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 2: Мероприятия -->
+        <!-- <section id="events-block" class="events-section animate-on-scroll"> -->
+            <!-- <div class="events-section__image-container">
+                <div class="events-section__image-bg" style="background-image: url('video/видео.png');"></div>
+                <div class="events-section__overlay"></div>
+                <div class="events-section__content">
+                    <h2 class="events-section__title">
+                        <strong>Семейные праздники</strong><br>
+                        <strong>в уютном «Прянике»</strong>
+                    </h2>
+                    <p class="events-section__descr">
+                        Счастливые моменты для ваших близких можете создать только вы, а мы позаботимся о том, чтобы все прошло на высшем уровне!
+                    </p>
+                    <a href="banketi.html" class="events-section__btn">Подробнее</a>
+                </div>
+            </div> -->
+        <!-- </section> -->
+
+        <section id="events-block" class="events-section animate-on-scroll">
+    <div class="events-section__video-container">
+        <video class="events-section__video" autoplay loop muted playsinline>
+            <source src="video/Семья.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <div class="events-section__overlay"></div>
+        <div class="events-section__content">
+            <h2 class="events-section__title">
+                <strong>Семейные праздники</strong><br>
+                <strong>в уютном «Прянике»</strong>
+            </h2>
+            <p class="events-section__descr">
+                Счастливые моменты для ваших близких можете создать только вы,<br>
+                а мы позаботимся о том, чтобы все прошло на высшем уровне!
+            </p>
+            <a href="banketi.html" class="events-section__btn">Подробнее</a>
+        </div>
+    </div>
+</section>
+
+        <!-- Блок 3: О нас -->
+        <div class="about-block animate-on-scroll" id="about-block">
+            <div class="about-wrapper">
+                <div class="about-container">
+                    <div class="about-image-col">
+                        <div class="about-image-bg" style="background-image: url('image/events/family.jpeg');"></div>
+                    </div>
+                    <div class="about-text-col">
+                        <div class="about-text-wrapper">
+                            <div class="about-content">
+                                <div class="about-title-block">
+                                    <p class="about-title-line first">Домашняя кухня всегда понятна, честна и согревает душу,</p>
+                                    <p class="about-title-line second">как в детстве.</p>
+                                </div>
+                                <div class="about-subtitle">
+                                    Вкусные и знакомые блюда, без лишних изысков, но с заботой и любовью.
+                                </div>
+                                <div class="about-divider"></div>
+                                <div class="about-description">
+                                    В них мы вложили тепло семейных рецептов и традиций, используя только свежие продукты и проверенные временем сочетания. Всё, чтобы вы чувствовали себя как дома.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 4: Концепция -->
+        <div class="concept-block animate-on-scroll">
+            <div class="concept-container">
+                <div class="concept-text-col">
+                    <div class="concept-text-wrapper" style="height:560px;">
+                        <div class="concept-content">
+                            <div class="concept-box">
+                                <h2 class="concept-title">В «Прянике» нет алкоголя</h2>
+                                <div class="concept-divider"></div>
+                                <p class="concept-description">Мы за здоровый и осознанный отдых всей семьёй. Только вкусная еда, ароматный чай, лимонады и наши знаменитые овершейки.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concept-image-col">
+                    <div class="concept-image-bg" style="background-image: url('image/events/овершейк.jpg');"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 5: Философия -->
+        <div class="philosophy-block animate-on-scroll">
+            <div class="philosophy-wrapper">
+                <div class="philosophy-container">
+                    <div class="philosophy-image-col">
+                        <div class="philosophy-image-bg" style="background-image: url('image/events/пицца.jpg');"></div>
+                    </div>
+                    <div class="philosophy-text-col">
+                        <div class="philosophy-text-wrapper">
+                            <div class="philosophy-content">
+                                <h2 class="philosophy-title">В основе меню кафе «Пряник» - домашний уют и забота. Мы создали пространство, где главные герои - дети и семейные традиции.</h2>
+                                <p class="philosophy-subtitle">Каждый раздел меню дарит радость совместного времяпрепровождения: от мастер-классов до праздничных бонусов в день рождения.</p>
+                                <div class="philosophy-divider"></div>
+                                <p class="philosophy-description">Важной частью философии является живое общение и вовлечение гостей. Мы готовим сочные бургеры, пиццу, блинчики и авторские лимонады, а ещё приглашаем создавать кулинарные шедевры своими руками. Всё это помогает прочувствовать связь между домашним теплом и искусством гостеприимства.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 6: Атмосфера -->
+        <div class="atmosphere-block animate-on-scroll">
+            <div class="atmosphere__carrier" style="background-image: url('image/Фото.png'); background-attachment: fixed;"></div>
+            <div class="atmosphere__filter" style="background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.6));"></div>
+            <div class="atmosphere-container">
+                <div class="atmosphere__wrapper">
+                    <div class="atmosphere-content">
+                        <div class="atmosphere__wrapper-inner">
+                            <div class="atmosphere__title">
+                                <div style="font-size: 28px;">В «Прянике» каждый найдёт занятие по душе:<br>игровая, мастер-классы и вкусная еда</div>
+                            </div>
+                            <div class="atmosphere-row">
+                                <div class="atmosphere-col atmo-col_2 atmo-prefix_5">
+                                    <div class="atmosphere-divider"></div>
+                                </div>
+                            </div>
+                            <div class="atmosphere-row">
+                                <div class="atmosphere-col atmo-col_10 atmo-prefix_1">
+                                    <div class="atmosphere__descr">
+                                        <div style="font-size: 18px; line-height: 24px;">Большая игровая зона для детей, а по выходным - увлекательные кулинарные мастер-классы. Для взрослых - уютный зал с домашней кухней, авторскими лимонадами и фирменными овершейками.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 7: Интерьер (заголовок) -->
+        <div class="interior-title-block animate-on-scroll" id="interior-block">
+            <div class="interior-title-container">
+                <div class="interior-title-wrapper">
+                    <h2 class="interior-title">Интерьер</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 7: Интерьер (слайдер) -->
+        <div class="interior-slider-block animate-on-scroll">
+            <div class="interior-slds">
+                <div class="interior-slds__container">
+                    <div class="interior-slds__items-wrapper" id="carousel">
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/1.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/2.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/4.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/6.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/5.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/3.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/7.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/8.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interior-slds__item">
+                            <div class="interior-slds__slide">
+                                <div class="interior-slds__image-wrapper">
+                                    <div class="interior-slds__bgimg" style="background-image: url('image/interior/9.heic');"></div>
+                                    <div class="interior-slds__separator" style="padding-bottom: 63.9535%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interior-slds__arrow-container">
+                        <button class="interior-slds__arrow interior-slds__arrow-left" aria-label="Предыдущий слайд">
+                            <div class="interior-slds__arrow-body">
+                                <svg viewBox="0 0 9.3 17">
+                                    <polyline fill="none" stroke="#000000" stroke-width="1" points="0.5,0.5 8.5,8.5 0.5,16.5"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <button class="interior-slds__arrow interior-slds__arrow-right" aria-label="Следующий слайд">
+                            <div class="interior-slds__arrow-body">
+                                <svg viewBox="0 0 9.3 17">
+                                    <polyline fill="none" stroke="#000000" stroke-width="1" points="0.5,0.5 8.5,8.5 0.5,16.5"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="interior-slds__bullet-container">
+                        <button class="interior-slds__bullet" aria-label="Слайд 1"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 2"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 3"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 4"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 5"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 6"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 7"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 8"></button>
+                        <button class="interior-slds__bullet" aria-label="Слайд 9"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 8: События (заголовок) -->
+        <div class="events-title-block animate-on-scroll">
+            <div class="events-title-container">
+                <div class="events-title-wrapper">
+                    <h2 class="events-main-title">События, которые нас объединяют</h2>
+                    <p class="events-subtitle">В «Прянике» регулярно проходят тёплые встречи, мастер-классы и праздники для всей семьи</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Событие 1: Кулинарные мастер-классы -->
+        <div class="event-block animate-on-scroll">
+            <div class="event-wrapper">
+                <div class="event-container">
+                    <div class="event-image-col">
+                        <div class="event-image-bg" style="background-image: url('image/events/Кулинарные мастер-классы.png'); width: 460px; height: 340px;"></div>
+                    </div>
+                    <div class="event-text-col" style="min-height: 340px;">
+                        <div class="event-text-wrapper">
+                            <div class="event-content">
+                                <h3 class="event-title-line" style="font-size: 28px; line-height: 1.3; margin-bottom: 20px; text-align: center;">Кулинарные мастер-классы</h3>
+                                <div class="event-divider" style="margin: 0 auto 25px;"></div>
+                                <p class="event-description" style="text-align: center; max-width: 400px; font-size: 16px; line-height: 1.6;">
+                                    Для детей и взрослых. Специально оборудованная зона, где можно научиться чему-то новому и провести время вместе.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Событие 2: Кинопоказы -->
+        <div class="event-block-reverse animate-on-scroll">
+            <div class="event-container-reverse">
+                <div class="event-text-col-reverse">
+                    <div class="event-text-wrapper-reverse" style="height: 340px;">
+                        <div class="event-content-reverse" style="max-width: 500px;">
+                            <h3 class="event-title-reverse" style="font-size: 28px; line-height: 1.3; margin-bottom: 20px; text-align: center;">Кинопоказы</h3>
+                            <div class="event-divider-reverse" style="margin: 0 auto 25px;"></div>
+                            <p class="event-description-reverse" style="text-align: center; max-width: 400px; font-size: 16px; line-height: 1.6;">
+                                По вечерам мы собираемся для совместного просмотра трогательных, жизнеутверждающих и душевных фильмов в уютной атмосфере.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-image-col-reverse">
+                    <div class="event-image-bg-reverse" style="background-image: url('image/events/Кинопоказы.png'); width: 460px; height: 340px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Событие 3: Детские шоу-программы -->
+        <div class="event-block animate-on-scroll">
+            <div class="event-wrapper">
+                <div class="event-container">
+                    <div class="event-image-col">
+                        <div class="event-image-bg" style="background-image: url('image/events/Детские шоу-программы.png'); width: 460px; height: 340px;"></div>
+                    </div>
+                    <div class="event-text-col" style="min-height: 340px;">
+                        <div class="event-text-wrapper">
+                            <div class="event-content">
+                                <h3 class="event-title-line" style="font-size: 28px; line-height: 1.3; margin-bottom: 20px; text-align: center;">Детские шоу-программы</h3>
+                                <div class="event-divider" style="margin: 0 auto 25px;"></div>
+                                <p class="event-description" style="text-align: center; max-width: 400px; font-size: 16px; line-height: 1.6;">
+                                    Весёлые и яркие выступления юных талантов. Улыбки и хорошее настроение для всей семьи совершенно бесплатно.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Событие 4: Детские дискотеки -->
+        <div class="event-block-reverse animate-on-scroll">
+            <div class="event-container-reverse">
+                <div class="event-text-col-reverse">
+                    <div class="event-text-wrapper-reverse" style="height: 340px;">
+                        <div class="event-content-reverse" style="max-width: 500px;">
+                            <h3 class="event-title-reverse" style="font-size: 28px; line-height: 1.3; margin-bottom: 20px; text-align: center;">Детские дискотеки</h3>
+                            <div class="event-divider-reverse" style="margin: 0 auto 25px;"></div>
+                            <p class="event-description-reverse" style="text-align: center; max-width: 400px; font-size: 16px; line-height: 1.6;">
+                                Музыка, танцы, фуршетный стол и световое оформление. Незабываемая вечеринка для ребят и море позитива!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-image-col-reverse">
+                    <div class="event-image-bg-reverse" style="background-image: url('image/events/Детские дискотеки.png'); width: 460px; height: 340px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 9: Подарочный сертификат -->
+        <div class="certificate-block animate-on-scroll">
+            <div class="certificate-container">
+                <div class="certificate-wrapper">
+                    <div class="certificate-image-wrapper">
+                        <img class="certificate-image" src="image/Фото.png" alt="Подарочный сертификат" width="1170" height="821">
+                    </div>
+                    <div class="certificate-text-wrapper">
+                        <div class="certificate-title">
+                            В НАШЕМ <br>РЕСТОРАНЕ <br> ВЫ МОЖЕТЕ <br> ПРИОБРЕСТИ <br>ПОДАРОЧНЫЙ <br>СЕРТИФИКАТ ДЛЯ <br>ДОРОГИХ <br>ВАМ<br> ЛЮДЕЙ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 10: Отзывы -->
+        <div class="review-block animate-on-scroll" id="review-block">
+            <div class="review-bg">
+                <div class="review-overlay"></div>
+                <div class="review-container">
+                    <div class="review-content">
+                        <h2 class="review-title">Мы будем рады вашему отзыву</h2>
+                        <div class="review-divider"></div>
+                        <div class="review-buttons">
+                            <a href="https://2gis.ru/petrozavodsk/firm/70000001094358877" target="_blank" class="review-btn">Оставить отзыв на <strong>2 ГИС</strong></a>
+                            <a href="https://yandex.ru/maps/org/pryanik/108011984721/" target="_blank" class="review-btn">Оставить отзыв на <strong>ЯНДЕКС</strong></a>
+                            <a href="#" target="_blank" class="review-btn">Оставить отзыв на <strong>GOOGLE</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок 11: Футер -->
+        <div class="footer-block animate-on-scroll">
+            <div class="footer-container">
+                <div class="footer-text">
+                    <p>Семейный клуб и ресторан «Пряник»</p>
+                    <p>ул. Правды, 38Б, Петрозаводск | Тел: +7 (911) 400-43-43</p>
+                    <p>Режим работы: ежедневно с 12:00 до 21:00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка "Наверх" -->
+        <button class="scroll-top-btn" aria-label="Наверх" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+                <rect width="50" height="50" rx="50" fill="#ffffff" fill-opacity="0.9"/>
+                <path d="M14 28L25 18l10 10" stroke="#000000" stroke-width="1" fill="none"/>
+            </svg>
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
