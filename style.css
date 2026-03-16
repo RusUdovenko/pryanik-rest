@@ -4701,12 +4701,11 @@ body {
 /* ===== ПЛАНШЕТЫ (769px - 1024px) ===== */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     
-    /* Скрываем десктопную навигацию */
+    /* ===== ШАПКА ===== */
     .desktop-nav {
         display: none !important;
     }
     
-    /* Скрываем контакты и соцсети в шапке */
     .header__contacts {
         display: none !important;
     }
@@ -4715,13 +4714,11 @@ body {
         display: none !important;
     }
     
-    /* Показываем бургер */
     .burger-menu {
         display: block !important;
         margin-left: auto;
     }
     
-    /* Настраиваем шапку */
     .header {
         padding: 10px 30px;
         background-color: rgba(74, 74, 74, 0.9);
@@ -4741,277 +4738,275 @@ body {
         height: 45px;
     }
     
-    /* Вертикальное расположение блоков */
-    .about-container,
-    .concept-container,
-    .philosophy-container,
-    .business-lunch-container,
-    .event-container,
-    .event-container-reverse,
-    .banquet-interior-container,
-    .banquet-format-container,
-    .banquet-catering-container,
-    .banquet-service-container,
-    .banquet-necessities-container {
+    /* ===== МОБИЛЬНОЕ МЕНЮ НА ПЛАНШЕТАХ ===== */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-secondary);
+        z-index: 1000;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .mobile-menu.active {
+        right: 0;
+    }
+    
+    .mobile-menu__container {
+        padding: 20px 30px 50px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+    
+    .mobile-menu__close-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 0 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border-light);
+    }
+    
+    /* Запрещаем скролл body при открытом меню */
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    /* ===== БЛОК 3: О НАС ===== */
+    .about-container {
         flex-direction: column !important;
         gap: 30px;
     }
     
-    .about-container {
-        flex-direction: column-reverse !important;
+    /* Фото сверху */
+    .about-container .about-image-col {
+        order: 1 !important;
     }
     
-    .concept-container,
-    .business-lunch-container,
-    .banquet-format-container,
-    .banquet-service-container,
-    .banquet-necessities-container {
-        flex-direction: column-reverse !important;
+    /* Текст снизу по центру */
+    .about-container .about-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
     }
     
-    /* Изображения на всю ширину */
+    .about-container .about-text-wrapper {
+        max-width: 100% !important;
+        padding: 20px;
+        text-align: center !important;
+    }
+    
+    .about-container .about-title-line {
+        text-align: center !important;
+    }
+    
+    .about-container .about-subtitle {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .about-container .about-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .about-container .about-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* ===== БЛОК 4: КОНЦЕПЦИЯ ===== */
+    .concept-container {
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    /* Фото сверху */
+    .concept-container .concept-image-col {
+        order: 1 !important;
+    }
+    
+    /* Текст снизу по центру */
+    .concept-container .concept-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .concept-container .concept-text-wrapper {
+        height: auto !important;
+        padding: 20px 0;
+        text-align: center !important;
+    }
+    
+    .concept-container .concept-content {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    .concept-container .concept-title {
+        text-align: center !important;
+    }
+    
+    .concept-container .concept-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .concept-container .concept-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 500px !important;
+    }
+    
+    /* ===== БЛОК 5: ФИЛОСОФИЯ ===== */
+    .philosophy-container {
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    /* Фото сверху */
+    .philosophy-container .philosophy-image-col {
+        order: 1 !important;
+    }
+    
+    /* Текст снизу по центру */
+    .philosophy-container .philosophy-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .philosophy-container .philosophy-text-wrapper {
+        max-width: 100% !important;
+        padding: 20px;
+        text-align: center !important;
+    }
+    
+    .philosophy-container .philosophy-content {
+        text-align: center !important;
+    }
+    
+    .philosophy-container .philosophy-title {
+        text-align: center !important;
+    }
+    
+    .philosophy-container .philosophy-subtitle {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .philosophy-container .philosophy-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .philosophy-container .philosophy-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* ===== БЛОК 6: БИЗНЕС-ЛАНЧ ===== */
+    .business-lunch-container {
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    /* Фото сверху */
+    .business-lunch-container .business-lunch-image-col {
+        order: 1 !important;
+    }
+    
+    /* Текст снизу по центру */
+    .business-lunch-container .business-lunch-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .business-lunch-container .business-lunch-text-wrapper {
+        height: auto !important;
+        padding: 20px 0;
+        text-align: center !important;
+    }
+    
+    .business-lunch-container .business-lunch-content {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    .business-lunch-container .business-lunch-title {
+        text-align: center !important;
+    }
+    
+    .business-lunch-container .business-lunch-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .business-lunch-container .business-lunch-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 500px !important;
+    }
+    
+    /* ===== ОБЩИЕ РАЗМЕРЫ ДЛЯ ИЗОБРАЖЕНИЙ ===== */
     .about-image-col,
     .concept-image-col,
     .philosophy-image-col,
-    .business-lunch-image-col,
-    .event-image-col,
-    .event-image-col-reverse,
-    .banquet-interior-image-col,
-    .banquet-format-image-col,
-    .banquet-catering-image-col,
-    .banquet-service-image-col,
-    .banquet-necessities-image-col {
+    .business-lunch-image-col {
         flex: 0 0 auto !important;
         width: 100% !important;
         max-width: 600px !important;
         margin: 0 auto !important;
+        overflow: hidden;
+        border-radius: 40px;
     }
     
     .about-image-bg,
-    .concept-image-bg,
-    .philosophy-image-bg,
-    .business-lunch-image-bg,
-    .event-image-bg,
-    .event-image-bg-reverse,
-    .banquet-interior-image,
-    .banquet-format-image,
-    .banquet-catering-image,
-    .banquet-service-image,
-    .banquet-necessities-image {
+    .philosophy-image-bg {
         width: 100% !important;
         height: auto !important;
+        aspect-ratio: 1/1 !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
     }
     
     .concept-image-bg,
-    .business-lunch-image-bg,
-    .banquet-format-image,
-    .banquet-service-image,
-    .banquet-necessities-image {
-        aspect-ratio: 460/560;
-    }
-    
-    .event-image-bg,
-    .event-image-bg-reverse {
-        aspect-ratio: 460/340;
-    }
-    
-    /* Текстовые колонки */
-    .about-text-col,
-    .concept-text-col,
-    .philosophy-text-col,
-    .business-lunch-text-col,
-    .event-text-col,
-    .event-text-col-reverse,
-    .banquet-interior-text-col,
-    .banquet-format-text-col,
-    .banquet-catering-text-col,
-    .banquet-service-text-col,
-    .banquet-necessities-text-col {
+    .business-lunch-image-bg {
         width: 100% !important;
-        min-height: auto !important;
-    }
-    
-    .about-text-wrapper,
-    .philosophy-text-wrapper,
-    .event-text-wrapper,
-    .event-text-wrapper-reverse {
-        max-width: 100% !important;
-        padding: 0 20px;
-    }
-    
-    .concept-text-wrapper,
-    .business-lunch-text-wrapper,
-    .banquet-interior-textwrapper,
-    .banquet-format-textwrapper,
-    .banquet-catering-textwrapper,
-    .banquet-service-textwrapper,
-    .banquet-necessities-textwrapper {
         height: auto !important;
-        padding: 30px 0;
+        aspect-ratio: 460/560 !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
     }
-    
-    .concept-content,
-    .business-lunch-content,
-    .banquet-interior-content,
-    .banquet-format-content,
-    .banquet-catering-content,
-    .banquet-service-content,
-    .banquet-necessities-content {
-        height: auto !important;
-        padding: 0 20px;
-    }
-    
-    /* Текст по центру */
-    .about-content,
-    .concept-content,
-    .philosophy-content,
-    .business-lunch-content,
-    .event-content,
-    .event-content-reverse,
-    .banquet-interior-content,
-    .banquet-format-content,
-    .banquet-catering-content,
-    .banquet-service-content,
-    .banquet-necessities-content {
-        text-align: center;
-    }
-    
-    /* Слайдер для планшетов */
-    .interior-slds__items-wrapper {
-        gap: 20px;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding: 0 20px;
-    }
-    
-    .interior-slds__item {
-        flex: 0 0 70% !important;
-        width: 70% !important;
-        scroll-snap-align: center;
-    }
-    
-    .interior-slds__arrow-container {
-        display: none !important;
-    }
-    
-    .interior-slds__bullet-container {
-        display: flex !important;
-    }
-    
-    /* Сетка меню */
-    .menu-catalog-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px;
-    }
-    
-    /* Программа лояльности */
-    .loyalty-program-container {
-        flex-direction: column !important;
-        align-items: center;
-    }
-    
-    .loyalty-program-image-col,
-    .loyalty-program-text-col {
-        width: 100% !important;
-        max-width: 500px !important;
-        margin: 0 auto !important;
-    }
-    
-    .loyalty-program-text-col {
-        margin-left: 0 !important;
-        margin-top: 20px;
-    }
-    
-    .loyalty-program-text-content {
-        align-items: center;
-        text-align: center;
-        padding: 40px;
-    }
-    
-    .loyalty-program-divider {
-        margin: 0 auto 25px;
-    }
-    
-    /* Кнопки для удобного нажатия */
-    .hero__btn,
-    .events-section__btn,
-    .review-btn,
-    .menu-main-tab,
-    .menu-catalog-cat,
-    .menu-catalog-loadmore-btn,
-    .banquet-contact-btn,
-    .loyalty-program-btn {
-        min-height: 48px;
-        padding: 14px 30px;
-        font-size: 15px;
-    }
-    
-    /* Hero секция */
-    .hero__title {
-        font-size: 52px;
-    }
-    
-    .hero__title span {
-        font-size: 62px;
-    }
-    
-    .hero__welcome {
-        font-size: 16px;
-    }
-    
-    /* Заголовки */
-    .interior-title,
-    .events-main-title {
-        font-size: 52px;
-    }
-    
-    .about-title-line,
-    .concept-title,
-    .philosophy-title,
-    .business-lunch-title,
-    .event-title-line,
-    .event-title-reverse {
-        font-size: 32px;
-    }
-    
-    .about-subtitle,
-    .concept-description,
-    .philosophy-subtitle,
-    .business-lunch-description,
-    .event-description,
-    .event-description-reverse {
-        font-size: 16px;
-    }
-    
-    .about-description,
-    .philosophy-description {
-        font-size: 17px;
-    }
-    
-    /* Банкетные блоки */
-    .banquet-hero__title {
-        font-size: 52px;
-    }
-    
-    .banquet-hero__descr {
-        font-size: 20px;
-    }
-    
-    .banquet-title {
-        font-size: 36px;
-    }
-    
-    .banquet-contact-title {
-        font-size: 32px;
-    }
-    
-    /* Лояльность */
-    .loyalty-hero__title {
-        font-size: 52px;
-    }
-    
-    .loyalty-program-title {
-        font-size: 32px;
-    }
+    /* Сброс для body */
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
 }
