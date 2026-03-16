@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель | Пряник</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Шапка -->
+        <div class="admin-header">
+            <div class="admin-header-left">
+                <h1>Управление меню</h1>
+                <a href="../index.html" target="_blank">Открыть сайт</a>
+                <a href="../menu.html" target="_blank">Меню</a>
+                <a href="../banketi.html" target="_blank">Банкеты</a>
+            </div>
+            <button class="logout-btn" id="logoutBtn">Выйти</button>
+        </div>
+
+        <!-- Вкладки разделов -->
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="main">Основное меню</button>
+            <button class="tab-btn" data-tab="kids">Детское меню</button>
+            <button class="tab-btn" data-tab="banquet">Банкетное меню</button>
+        </div>
+
+        <!-- Панель инструментов -->
+        <div class="toolbar">
+            <button class="add-btn" id="addItemBtn">+ Добавить блюдо</button>
+            <input type="text" class="search-box" id="searchInput" placeholder="Поиск по названию...">
+        </div>
+
+        <!-- !!! ВОТ СЮДА ДОБАВЛЯЕМ ФИЛЬТРЫ !!! -->
+        <!-- Фильтры по категориям -->
+        <div class="filters-row" id="categoryFilters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <!-- Остальные категории будут добавлены динамически через js -->
+        </div>
+
+        <!-- Таблица меню -->
+        <div class="menu-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Фото</th>
+                        <th>Название</th>
+                        <th>Категория</th>
+                        <th>Вес/Ккал</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="menuTableBody">
+                    <tr>
+                        <td colspan="7" class="loading">Загрузка...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Модалка добавления/редактирования -->
+    <div class="modal" id="itemModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <h2 id="modalTitle">Добавить блюдо</h2>
+            
+            <form id="itemForm">
+                <input type="hidden" id="itemId">
+                
+                <div class="form-group">
+                    <label>Название *</label>
+                    <input type="text" id="itemName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Категория *</label>
+                    <select id="itemCategory" required>
+                        <option value="">Выберите</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Вес (г)</label>
+                        <input type="text" id="itemWeight" placeholder="200">
+                    </div>
+                    <div class="form-group">
+                        <label>Ккал</label>
+                        <input type="text" id="itemCalories" placeholder="245">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Описание / Состав</label>
+                    <textarea id="itemDescription" rows="3" placeholder="Ингредиенты..."></textarea>
+                    <small style="color: #666; display: block; margin-top: 4px;">Это описание появится под весом/калориями</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Цена *</label>
+                    <input type="number" id="itemPrice" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Изображение</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="file" id="itemImage" accept="image/*" style="flex: 1;">
+                        <span>или</span>
+                        <input type="text" id="itemImageUrl" placeholder="URL" style="flex: 2;">
+                    </div>
+                    <div class="image-preview" id="imagePreview"></div>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="save-btn">Сохранить</button>
+                    <button type="button" class="cancel-btn" id="cancelModal">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модалка удаления -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content" style="max-width: 400px;">
+            <h2>Подтверждение</h2>
+            <p style="margin: 20px 0;">Удалить это блюдо?</p>
+            <div class="modal-buttons">
+                <button class="save-btn" id="confirmDeleteBtn">Удалить</button>
+                <button class="cancel-btn" id="cancelDeleteBtn">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
