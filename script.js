@@ -1,4 +1,3 @@
-// ПРОСТОЙ СЛАЙДЕР - НАЧИНАЕТСЯ С ПЕРВОГО СЛАЙДА
 document.addEventListener('DOMContentLoaded', function() {
     
     var track = document.querySelector('.interior-slds__items-wrapper');
@@ -135,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
     centerActiveSlide();
 });
 
-// Увеличение изображений в слайдере
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.interior-slds__item');
     
@@ -183,11 +181,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Бургер-меню
 document.addEventListener('DOMContentLoaded', function() {
     const burgerButton = document.querySelector('.burger-button');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const closeButton = document.querySelector('.mobile-menu__close');
     
     if (burgerButton && mobileMenu) {
         burgerButton.addEventListener('click', function() {
@@ -196,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
         
+        const closeButton = mobileMenu.querySelector('.mobile-menu__close');
         if (closeButton) {
             closeButton.addEventListener('click', function() {
                 burgerButton.classList.remove('active');
@@ -223,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Плавная прокрутка для якорей
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -244,24 +240,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК МЕНЮ (Основное меню, Детское меню, Банкетное меню)
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Скрипт вкладок загружен');
-    
     const tabs = document.querySelectorAll('.menu-main-tab');
     const contents = document.querySelectorAll('.menu-tab-content');
     
-    console.log('Найдено вкладок:', tabs.length);
-    console.log('Найдено контентов:', contents.length);
-    
-    if (!tabs.length || !contents.length) {
-        console.log('Вкладки или контент не найдены');
-        return;
-    }
+    if (!tabs.length || !contents.length) return;
     
     function switchTab(tabId) {
-        console.log('Переключение на вкладку:', tabId);
-        
         tabs.forEach(t => t.classList.remove('active'));
         
         const activeTab = document.querySelector(`.menu-main-tab[data-tab="${tabId}"]`);
@@ -275,7 +260,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (activeContent) {
             activeContent.classList.add('active');
             
-            // Сброс фильтрации на "Все" при переключении вкладок
             const categoryButtons = activeContent.querySelectorAll('.menu-catalog-cat');
             const catalogItems = activeContent.querySelectorAll('.menu-catalog-item');
             
@@ -308,9 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ФИЛЬТРАЦИЯ ТОВАРОВ ПО КАТЕГОРИЯМ (для каждой вкладки отдельно)
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Фильтр категорий загружен');
     
     function initFiltersForContainer(container) {
         const categoryButtons = container.querySelectorAll('.menu-catalog-cat');
@@ -319,7 +301,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!categoryButtons.length || !catalogItems.length) return;
         
         function filterItems(category) {
-            console.log('Фильтрация по категории:', category);
             
             catalogItems.forEach(item => {
                 if (category === 'all') {
@@ -359,7 +340,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Загрузка еще товаров (для кнопки "Загрузить еще")
 document.addEventListener('DOMContentLoaded', function() {
     function initLoadMore(container) {
         const loadMoreBtn = container.querySelector('.menu-catalog-loadmore-btn');
@@ -409,7 +389,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Анимация появления при скролле
 document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     
@@ -431,7 +410,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkScroll);
 });
 
-// Аккордеон для вакансий (больше не используется, но оставлен на случай)
 document.addEventListener('DOMContentLoaded', function() {
     const accordionItems = document.querySelectorAll('.vacancy-accordion-item');
     
@@ -467,4 +445,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+const mobileLogoLink = document.querySelector('.mobile-menu__logo-wrapper a');
+const burgerButton = document.querySelector('.burger-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+if (mobileLogoLink && burgerButton && mobileMenu) {
+    mobileLogoLink.addEventListener('click', function() {
+        burgerButton.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+}
 
