@@ -2017,12 +2017,11 @@ body {
 /* Мобильные устройства (до 768px) */
 @media screen and (max-width: 768px) {
     
-    /* Десктопная навигация скрыта */
+    /* ===== ШАПКА ===== */
     .desktop-nav {
         display: none;
     }
     
-    /* Контакты и соцсети в шапке скрыты */
     .header__contacts {
         display: none;
     }
@@ -2031,7 +2030,6 @@ body {
         display: none;
     }
     
-    /* Бургер виден */
     .burger-menu {
         display: block;
         margin-left: auto;
@@ -2052,7 +2050,339 @@ body {
         display: block;
     }
     
-    /* Hero */
+    .header__logo-img {
+        height: 40px;
+    }
+    
+    /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-secondary);
+        z-index: 1000;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .mobile-menu.active {
+        right: 0;
+    }
+    
+    .mobile-menu__container {
+        padding: 20px 20px 40px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+    
+    .mobile-menu__close-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 10px 0 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border-light);
+    }
+    
+    .mobile-menu__logo-img {
+        height: 40px;
+    }
+    
+    .mobile-menu__list a {
+        font-size: 18px;
+    }
+    
+    .mobile-menu__phone {
+        font-size: 20px;
+    }
+    
+    /* ===== БЛОК 3: О НАС ===== */
+    .about-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    .about-container .about-image-col {
+        order: 1 !important;
+    }
+    
+    .about-container .about-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .about-container .about-text-wrapper {
+        max-width: 100% !important;
+        padding: 20px;
+        text-align: center !important;
+    }
+    
+    .about-container .about-title-line {
+        text-align: center !important;
+        font-size: 28px;
+    }
+    
+    .about-container .about-subtitle {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 16px;
+    }
+    
+    .about-container .about-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .about-container .about-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 16px;
+    }
+    
+    /* ===== БЛОК 4: КОНЦЕПЦИЯ ===== */
+    .concept-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    .concept-container .concept-image-col {
+        order: 1 !important;
+    }
+    
+    .concept-container .concept-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .concept-container .concept-text-wrapper {
+        height: auto !important;
+        padding: 20px 0;
+        text-align: center !important;
+    }
+    
+    .concept-container .concept-content {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    .concept-container .concept-title {
+        text-align: center !important;
+        font-size: 28px;
+    }
+    
+    .concept-container .concept-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .concept-container .concept-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 100% !important;
+        font-size: 16px;
+    }
+    
+    /* ===== БЛОК 5: ФИЛОСОФИЯ ===== */
+    .philosophy-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    .philosophy-container .philosophy-image-col {
+        order: 1 !important;
+    }
+    
+    .philosophy-container .philosophy-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .philosophy-container .philosophy-text-wrapper {
+        max-width: 100% !important;
+        padding: 20px;
+        text-align: center !important;
+    }
+    
+    .philosophy-container .philosophy-title {
+        text-align: center !important;
+        font-size: 28px;
+    }
+    
+    .philosophy-container .philosophy-subtitle {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 16px;
+    }
+    
+    .philosophy-container .philosophy-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .philosophy-container .philosophy-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-size: 16px;
+    }
+    
+    /* ===== БЛОК 6: БИЗНЕС-ЛАНЧ ===== */
+    .business-lunch-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    .business-lunch-container .business-lunch-image-col {
+        order: 1 !important;
+    }
+    
+    .business-lunch-container .business-lunch-text-col {
+        order: 2 !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .business-lunch-container .business-lunch-text-wrapper {
+        height: auto !important;
+        padding: 20px 0;
+        text-align: center !important;
+    }
+    
+    .business-lunch-container .business-lunch-content {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+    
+    .business-lunch-container .business-lunch-title {
+        text-align: center !important;
+        font-size: 28px;
+    }
+    
+    .business-lunch-container .business-lunch-divider {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .business-lunch-container .business-lunch-description {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 100% !important;
+        font-size: 16px;
+    }
+    
+    /* ===== БЛОКИ СОБЫТИЙ ===== */
+    .event-container,
+    .event-container-reverse {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    .event-container .event-image-col {
+        order: 1 !important;
+    }
+    
+    .event-container .event-text-col {
+        order: 2 !important;
+    }
+    
+    .event-container-reverse .event-image-col-reverse {
+        order: 1 !important;
+    }
+    
+    .event-container-reverse .event-text-col-reverse {
+        order: 2 !important;
+        text-align: center !important;
+    }
+    
+    .event-content,
+    .event-content-reverse {
+        text-align: center !important;
+    }
+    
+    .event-title-line,
+    .event-title-reverse {
+        text-align: center !important;
+        font-size: 28px;
+    }
+    
+    .event-description,
+    .event-description-reverse {
+        text-align: center !important;
+        font-size: 16px;
+    }
+    
+    .event-divider,
+    .event-divider-reverse {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* ===== ОБЩИЕ РАЗМЕРЫ ДЛЯ ИЗОБРАЖЕНИЙ ===== */
+    .about-image-col,
+    .concept-image-col,
+    .philosophy-image-col,
+    .business-lunch-image-col,
+    .event-image-col,
+    .event-image-col-reverse {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        overflow: hidden;
+        border-radius: 30px;
+    }
+    
+    .about-image-bg,
+    .philosophy-image-bg {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    
+    .concept-image-bg,
+    .business-lunch-image-bg {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 460/560 !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    
+    .event-image-bg,
+    .event-image-bg-reverse {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 460/340 !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    
+    /* ===== ОСТАЛЬНЫЕ СТИЛИ (HERO, АТМОСФЕРА И Т.Д.) ===== */
     .hero__title {
         font-size: 42px;
     }
@@ -2074,12 +2404,11 @@ body {
         background-attachment: scroll;
     }
     
-    /* Видеоблок/изображение */
     .events-section {
         padding: 30px 0;
     }
     
-    .events-section__image-container {
+    .events-section__video-container {
         width: calc(100% - 30px);
         height: 350px;
         border-radius: 30px;
@@ -2098,118 +2427,6 @@ body {
         font-size: 12px;
     }
     
-    /* Блоки с картинками и текстом - важная часть для мобильных */
-    .about-block,
-    .concept-block,
-    .philosophy-block {
-        padding: 60px 0 30px;
-    }
-    
-    .about-container,
-    .concept-container,
-    .philosophy-container,
-    .event-container,
-    .event-container-reverse {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .about-image-col,
-    .concept-image-col,
-    .philosophy-image-col,
-    .event-image-col,
-    .event-image-col-reverse {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    
-    .about-image-bg,
-    .concept-image-bg,
-    .philosophy-image-bg,
-    .event-image-bg,
-    .event-image-bg-reverse {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
-        max-width: 100%;
-    }
-    
-    .concept-image-bg {
-        aspect-ratio: 460/560;
-    }
-    
-    .about-text-col,
-    .concept-text-col,
-    .philosophy-text-col,
-    .event-text-col,
-    .event-text-col-reverse {
-        min-height: auto;
-        width: 100%;
-    }
-    
-    .about-text-wrapper,
-    .concept-text-wrapper,
-    .philosophy-text-wrapper,
-    .event-text-wrapper,
-    .event-text-wrapper-reverse {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    
-    .concept-text-wrapper {
-        height: auto;
-        padding: 20px 0;
-    }
-    
-    .concept-content {
-        margin-left: 0;
-        max-width: 100%;
-    }
-    
-    .event-text-wrapper-reverse {
-        height: auto;
-        padding: 20px 0;
-    }
-    
-    .event-content-reverse {
-        margin-left: 0;
-        max-width: 100%;
-    }
-    
-    /* Текст всегда по центру на мобильных */
-    .about-content,
-    .concept-content,
-    .philosophy-content,
-    .event-content,
-    .event-content-reverse {
-        text-align: center;
-    }
-    
-    .about-title-line,
-    .concept-title,
-    .philosophy-title,
-    .event-title-line,
-    .event-title-reverse {
-        font-size: 28px;
-        line-height: 1.3;
-    }
-    
-    .about-subtitle,
-    .concept-description,
-    .philosophy-subtitle,
-    .event-description,
-    .event-description-reverse {
-        font-size: 16px;
-    }
-    
-    .about-description,
-    .philosophy-description {
-        font-size: 16px;
-    }
-    
-    /* Атмосфера */
     .atmosphere-block {
         height: 500px;
         background-attachment: scroll;
@@ -2227,7 +2444,6 @@ body {
         font-size: 16px;
     }
     
-    /* Интерьер */
     .interior-title {
         font-size: 48px;
     }
@@ -2270,7 +2486,6 @@ body {
         display: flex;
     }
     
-    /* События */
     .events-title-block {
         padding: 60px 0 30px;
     }
@@ -2283,21 +2498,6 @@ body {
         font-size: 16px;
     }
     
-    .event-block,
-    .event-block-reverse {
-        padding: 20px 0 !important;
-    }
-    
-    .event-block .event-image-bg,
-    .event-block-reverse .event-image-bg-reverse {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 460/340;
-        margin: 0 auto;
-    }
-    
-    /* Сертификат */
     .certificate-block {
         padding: 50px 20px;
     }
@@ -2335,7 +2535,6 @@ body {
         font-size: 24px;
     }
     
-    /* Отзывы */
     .review-bg {
         background-position: center;
         min-height: 400px;
@@ -2354,13 +2553,11 @@ body {
         padding: 14px 20px;
     }
     
-    /* Футер */
     .footer-block {
         padding: 40px 20px;
         font-size: 13px;
     }
     
-    /* Кнопка наверх скрыта на мобильных */
     .scroll-top-btn {
         display: none;
     }
@@ -2375,99 +2572,40 @@ body {
         margin-left: 0 !important;
         padding: 0;
     }
+
+    /* ===== БАНКЕТНЫЙ БЛОК "ВСЁ ДЛЯ ВАШЕГО ПРАЗДНИКА" ===== */
+.banquet-necessities-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px;
 }
 
-/* Маленькие мобильные (до 480px) */
-@media screen and (max-width: 480px) {
-    
-    .hero__title {
-        font-size: 32px;
-    }
-    
-    .hero__title span {
-        font-size: 36px;
-    }
-    
-    .hero__welcome {
-        font-size: 14px;
-    }
-    
-    .hero__btn {
-        padding: 10px 25px;
-        font-size: 11px;
-    }
-    
-    .events-section__image-container {
-        height: 280px;
-    }
-    
-    .events-section__title {
-        font-size: 26px;
-    }
-    
-    .events-section__descr {
-        font-size: 14px;
-    }
-    
-    .events-section__btn {
-        padding: 10px 25px;
-        font-size: 11px;
-    }
-    
-    .about-title-line,
-    .concept-title,
-    .philosophy-title,
-    .event-title-line,
-    .event-title-reverse {
-        font-size: 24px;
-    }
-    
-    .about-subtitle,
-    .concept-description,
-    .philosophy-subtitle,
-    .event-description,
-    .event-description-reverse {
-        font-size: 14px;
-    }
-    
-    .about-description,
-    .philosophy-description {
-        font-size: 15px;
-    }
-    
-    .atmosphere__title {
-        font-size: 20px;
-    }
-    
-    .atmosphere__descr {
-        font-size: 14px;
-    }
-    
-    .interior-title {
-        font-size: 36px;
-    }
-    
-    .interior-slds__item {
-        flex: 0 0 90%;
-        width: 90%;
-    }
-    
-    .events-main-title {
-        font-size: 36px;
-    }
-    
-    .certificate-title {
-        font-size: 20px;
-    }
-    
-    .review-title {
-        font-size: 24px;
-    }
-    
-    .review-btn {
-        font-size: 13px;
-        padding: 12px 15px;
-    }
+.banquet-necessities-container .banquet-necessities-image-col {
+    order: 1 !important;
+}
+
+.banquet-necessities-container .banquet-necessities-text-col {
+    order: 2 !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.banquet-necessities-container .banquet-necessities-content {
+    text-align: center !important;
+}
+
+.banquet-necessities-container .banquet-necessities-title {
+    text-align: center !important;
+}
+
+.banquet-necessities-container .banquet-necessities-divider {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.banquet-necessities-container .banquet-necessities-descr {
+    text-align: center !important;
+}
 }
 
 /* ===== СТРАНИЦА МЕНЮ ===== */
@@ -5010,3 +5148,4 @@ html {
     width: 100%;
 }
 }
+
