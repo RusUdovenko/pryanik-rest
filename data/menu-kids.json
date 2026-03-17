@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "id": 101,
+      "category": "Салаты",
+      "title": "Салат с курицей и овощами",
+      "description": "150 г / 180 ккал",
+      "price": 290,
+      "image": "../image/dishes/1.avif"
+    }
+  ]
+}

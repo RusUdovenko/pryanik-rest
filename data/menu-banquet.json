@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "id": 201,
+      "category": "Горячее",
+      "title": "Буженина гриль под соусом демигляс",
+      "description": "с картофелем айдахо / 300 г / 65,3 ккал",
+      "price": 600,
+      "image": "../image/banquet/buzhenina.jpg"
+    }
+  ]
+}
