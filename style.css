@@ -29,21 +29,37 @@
     font-display: swap;
 }
 
-/* ===== НОВАЯ ЦВЕТОВАЯ ПАЛИТРА ===== */
+
 :root {
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #FAF7F2;
-    --bg-accent: #F5F2EE;
-    --text-primary: #4A4A4A;
-    --text-secondary: #6B6B6B;
-    --text-light: #8E8E8E;
-    --accent-primary: #B7A99A;
-    --accent-secondary: #C5B9AC;
-    --accent-soft: #D6CCC2;
-    --border-light: #E5E0D8;
-    --shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.05);
-    --overlay-light: rgba(74, 74, 74, 0.2);
+
+    --bg-primary: #FFFFFF;        /* Чистый белый */
+    --bg-secondary: #FCF9F5;      /* Теплый белый */
+    
+
+    --bg-accent: #FDF3E0;         /* ☆ СЛИВОЧНО-КРЕМОВЫЙ (основной бежевый) */
+    --bg-accent-dark: #F8E8D4;    /* Глубокий кремовый для контраста */
+    --bg-accent-light: #FFF9F0;   /* Очень светлый бежевый */
+    
+  
+    --text-primary: #4A4A4A;      /* Мягкий серый */
+    --text-secondary: #6B5E4E;    /* Теплый коричневато-серый */
+    --text-light: #9B8F82;        /* Светлый текст */
+    
+
+    --accent-yellow: #F2C75C;      /* ☆ МЕДОВЫЙ (кнопки, иконки) */
+    --accent-yellow-light: #FAD98F; /* Светло-желтый для разделителей */
+    --accent-yellow-dark: #E5AD3A;  /* Для наведения */
+    --accent-yellow-pale: #FFF0D0;  /* Очень бледный желтый для подложек */
+
+    --beige-soft: #EFE1D1;         /* Для границ */
+    --beige-light: #F5E6D8;        /* Для фонов */
+    --beige-warm: #E8D5C0;         /* Теплый бежевый */
+
+    --border-light: #EDE5DC;
+    --shadow: 0 8px 25px rgba(242, 199, 92, 0.05); /* Легкая желтая тень */
+    --shadow-hover: 0 12px 35px rgba(242, 199, 92, 0.12);
+  
+    --overlay-light: rgba(74, 74, 74, 0.1);
     --overlay-medium: rgba(74, 74, 74, 0.5);
     --overlay-dark: rgba(74, 74, 74, 0.8);
 }
@@ -101,12 +117,6 @@ body {
     display: block;
 }
 
-/* Для мобильных устройств можно уменьшить логотип */
-@media screen and (max-width: 768px) {
-    .header__logo-img {
-        height: 40px;
-    }
-}
 
 .header__nav {
     position: absolute;
@@ -452,7 +462,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('image/Фото.png');
+    background-image: url('https://static.vecteezy.com/system/resources/previews/014/718/450/non_2x/cozy-cafe-or-restaurant-with-fireplace-and-windows-free-vector.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1072,7 +1082,7 @@ body {
 }
 
 /* Адаптация для мобильных */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .business-lunch-text-wrapper {
         height: 500px;
     }
@@ -1221,7 +1231,8 @@ body {
 .atmosphere-divider {
     width: 60px;
     height: 2px;
-    background-color: var(--accent-soft);
+    background-color: var(--accent-secondary);
+    margin: 0 auto 25px;
 }
 
 .atmosphere__descr {
@@ -1934,46 +1945,129 @@ body {
 /* ===== АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА ===== */
 
 /* Планшеты (до 1024px) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
+    
+    /* ШАПКА */
+    .desktop-nav {
+        display: none;
+    }
+    
+    .header__contacts {
+        display: none;
+    }
+    
+    .header__social {
+        display: none;
+    }
+    
+    .burger-menu {
+        display: block;
+        margin-left: auto;
+    }
+    
+    .header {
+        padding: 10px 30px;
+    }
+    
+    .header__logo-img {
+        height: 45px;
+    }
+    
+    /* HERO */
+    .hero__title {
+        font-size: 52px;
+    }
+    
+    .hero__title span {
+        font-size: 62px;
+    }
+    
+    /* О НАС */
     .about-container,
-    .concept-container,
-    .philosophy-container,
-    .certificate-wrapper,
-    .event-container,
-    .event-container-reverse {
+    .philosophy-container {
         gap: 40px;
     }
     
     .about-image-col,
-    .concept-image-col,
-    .philosophy-image-col,
-    .event-image-col,
-    .event-image-col-reverse {
-        flex: 0 0 400px;
-        width: 400px;
+    .philosophy-image-col {
+        flex: 0 0 380px;
+        width: 380px;
     }
     
     .about-image-bg,
+    .philosophy-image-bg {
+        width: 380px;
+        height: 380px;
+    }
+    
+    .about-text-wrapper,
+    .philosophy-text-wrapper {
+        max-width: 450px;
+    }
+    
+    /* КОНЦЕПЦИЯ И БИЗНЕС-ЛАНЧ */
+    .concept-container,
+    .business-lunch-container {
+        gap: 30px;
+    }
+    
+    .concept-image-col,
+    .business-lunch-image-col {
+        width: 45%;
+    }
+    
     .concept-image-bg,
-    .philosophy-image-bg,
-    .event-image-bg,
-    .event-image-bg-reverse {
-        width: 400px;
-        height: 400px;
+    .business-lunch-image-bg {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 460/560;
     }
     
-    .concept-image-bg {
-        height: 400px;
+    .concept-text-col,
+    .business-lunch-text-col {
+        width: 55%;
     }
     
-    .certificate-image-wrapper {
-        width: 800px;
-        height: 480px;
+    .concept-text-wrapper,
+    .business-lunch-text-wrapper {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .concept-content,
+    .business-lunch-content {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+    .concept-title,
+    .business-lunch-title {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+    
+    .concept-description,
+    .business-lunch-description {
+        font-size: 16px;
+    }
+    
+    /* АТМОСФЕРА */
+    .atmosphere__title {
+        font-size: 24px;
+    }
+    
+    .atmosphere__descr {
+        font-size: 16px;
+    }
+    
+    /* СЛАЙДЕР ИНТЕРЬЕРА */
+    .interior-title {
+        font-size: 52px;
     }
     
     .interior-slds__item {
-        flex: 0 0 600px;
-        width: 600px;
+        flex: 0 0 550px;
+        width: 550px;
     }
     
     .interior-slds__arrow-left {
@@ -1984,33 +2078,209 @@ body {
         right: 10px;
     }
     
-    .atmo-col_2 {
-        width: 16.66667%;
-    }
-    
-    .atmo-col_10 {
-        width: 83.33333%;
-    }
-    
-    .atmo-prefix_5 {
-        margin-left: 41.66667%;
-    }
-    
-    .atmo-prefix_1 {
-        margin-left: 8.33333%;
-    }
-    
-    .hero__title {
-        font-size: 60px;
-    }
-    
-    .hero__title span {
-        font-size: 70px;
-    }
-    
-    .interior-title,
+    /* СОБЫТИЯ */
     .events-main-title {
-        font-size: 60px;
+        font-size: 52px;
+    }
+    
+    .event-container,
+    .event-container-reverse {
+        gap: 40px;
+    }
+    
+    .event-image-col,
+    .event-image-col-reverse {
+        flex: 0 0 400px;
+        width: 400px;
+    }
+    
+    .event-image-bg,
+    .event-image-bg-reverse {
+        width: 400px;
+        height: 300px;
+    }
+    
+    .event-text-wrapper,
+    .event-text-wrapper-reverse {
+        height: auto;
+        min-height: 300px;
+    }
+    
+    .event-title-line,
+    .event-title-reverse {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+    
+    .event-description,
+    .event-description-reverse {
+        font-size: 16px;
+    }
+    
+    /* ПОДАРОЧНЫЙ СЕРТИФИКАТ */
+    .certificate-image-wrapper {
+        width: 700px;
+        height: 420px;
+    }
+    
+    .certificate-text-wrapper {
+        max-width: 450px;
+        padding: 30px;
+    }
+    
+    .certificate-title {
+        font-size: 26px;
+    }
+    
+    /* МЕНЮ */
+    .menu-main-heading {
+        font-size: 72px;
+        line-height: 65px;
+    }
+    
+    .menu-catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    /* БАНКЕТЫ */
+    .banquet-hero__title {
+        font-size: 52px;
+    }
+    
+    .banquet-hero__title div {
+        line-height: 48px;
+    }
+    
+    .banquet-hero__descr {
+        font-size: 20px;
+    }
+    
+    .banquet-interior-container,
+    .banquet-format-container,
+    .banquet-catering-container,
+    .banquet-service-container,
+    .banquet-necessities-container {
+        gap: 30px;
+    }
+    
+    .banquet-interior-image-col,
+    .banquet-catering-image-col,
+    .banquet-highlight-image-col {
+        flex: 0 0 380px;
+        width: 380px;
+    }
+    
+    .banquet-interior-image,
+    .banquet-catering-image,
+    .banquet-highlight-image {
+        width: 380px;
+        height: 380px;
+    }
+    
+    .banquet-interior-text-col,
+    .banquet-format-text-col,
+    .banquet-catering-text-col,
+    .banquet-service-text-col,
+    .banquet-necessities-text-col {
+        flex: 0 0 380px;
+        width: 380px;
+        min-height: 480px;
+    }
+    
+    .banquet-interior-content,
+    .banquet-format-content,
+    .banquet-catering-content,
+    .banquet-service-content,
+    .banquet-necessities-content {
+        width: 380px;
+        max-width: 380px;
+        height: 480px;
+    }
+    
+    .banquet-interior-title,
+    .banquet-format-title,
+    .banquet-catering-title,
+    .banquet-service-title,
+    .banquet-necessities-title {
+        font-size: 26px;
+    }
+    
+    .banquet-interior-descr,
+    .banquet-format-descr,
+    .banquet-catering-descr,
+    .banquet-service-descr,
+    .banquet-necessities-descr {
+        font-size: 16px;
+    }
+    
+    .banquet-format-image-col,
+    .banquet-service-image-col,
+    .banquet-necessities-image-col {
+        flex: 1;
+    }
+    
+    .banquet-format-image,
+    .banquet-service-image,
+    .banquet-necessities-image {
+        width: 380px;
+        height: 480px;
+    }
+    
+    .banquet-format-text-col {
+        margin-right: 20px;
+    }
+    
+    .banquet-service-text-col {
+        margin-right: 20px;
+    }
+    
+    .banquet-necessities-text-col {
+        margin-right: 20px;
+    }
+    
+    .banquet-interior-text-col {
+        margin-left: 20px;
+    }
+    
+    .banquet-catering-text-col {
+        margin-left: 20px;
+    }
+    
+    .banquet-highlight-text-col {
+        margin-left: 20px;
+    }
+    
+    /* ЛОЯЛЬНОСТЬ */
+    .loyalty-hero__title {
+        font-size: 52px;
+    }
+    
+    .loyalty-program-text-col {
+        margin-left: -80px;
+        margin-top: 50px;
+    }
+    
+    .loyalty-program-text-content {
+        padding: 40px;
+        min-height: 450px;
+    }
+    
+    .loyalty-program-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    
+    .loyalty-program-descr {
+        font-size: 16px;
+    }
+    
+    .loyalty-features-cover {
+        height: 500px;
+    }
+    
+    .loyalty-features__descr {
+        font-size: 28px;
     }
 }
 
@@ -2619,6 +2889,7 @@ body {
     color: var(--text-primary);
     margin-bottom: 6px;
     font-size: 14px;
+    
 }
 
 .menu-catalog-desc {
@@ -2941,7 +3212,7 @@ body {
 }
 
 /* Адаптация меню */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .menu-catalog-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -3145,7 +3416,7 @@ body {
 }
 
 /* Адаптация банкетного hero */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-hero__title {
         font-size: 60px;
     }
@@ -3313,7 +3584,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-interior-image-col {
         flex: 0 0 400px;
         width: 400px;
@@ -3474,7 +3745,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-format-text-col {
         flex: 0 0 400px;
         width: 400px;
@@ -3630,7 +3901,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-catering-image-col {
         flex: 0 0 400px;
         width: 400px;
@@ -3791,7 +4062,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-service-text-col {
         flex: 0 0 400px;
         width: 400px;
@@ -3947,7 +4218,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-highlight-image-col {
         flex: 0 0 400px;
         width: 400px;
@@ -4108,7 +4379,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-necessities-text-col {
         flex: 0 0 400px;
         width: 400px;
@@ -4254,7 +4525,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .banquet-contact-col {
         width: 83.33333%;
         margin-left: 8.33333%;
@@ -4453,7 +4724,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .loyalty-hero__title {
         font-size: 60px;
     }
@@ -4617,7 +4888,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .loyalty-program-text-col {
         margin-left: -100px;
         margin-top: 60px;
@@ -4636,40 +4907,81 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .loyalty-program-block {
-        padding: 50px 0;
+        .loyalty-program-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        padding: 0 15px !important;
     }
-    .loyalty-program-image-col,
-    .loyalty-program-text-col {
-        width: 100%;
-        padding: 0;
-        margin-left: 0;
-        margin-top: 0;
-    }
+    
+    /* Колонка с фотографией */
     .loyalty-program-image-col {
-        margin-bottom: 20px;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
+    
+    /* Фотография на всю ширину */
+    .loyalty-program-image-wrapper {
+        width: 100% !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        border-radius: 30px 30px 0 0 !important;
+        overflow: hidden;
+    }
+    
     .loyalty-program-image {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 380/413;
-        position: relative;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 380/413 !important;
+        border-radius: 30px 30px 0 0 !important;
     }
+    
+    /* Колонка с текстом */
+    .loyalty-program-text-col {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Контейнер текста */
     .loyalty-program-text-content {
-        padding: 30px;
-        min-height: auto;
-        align-items: center;
+        margin: 0 !important;
+        padding: 30px 20px !important;
+        border-radius: 0 0 30px 30px !important;
+        min-height: auto !important;
+        width: 100% !important;
+        box-shadow: var(--shadow);
     }
-    .loyalty-program-divider {
-        margin: 0 auto 25px;
-    }
+    
+    /* Текст по центру */
     .loyalty-program-text-inner {
-        text-align: center;
+        text-align: center !important;
+        width: 100% !important;
     }
+    
+    .loyalty-program-title {
+        text-align: center !important;
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .loyalty-program-divider {
+        margin: 0 auto 20px auto !important;
+    }
+    
+    .loyalty-program-descr {
+        text-align: center !important;
+        font-size: 16px !important;
+    }
+    
+    /* Кнопка по центру */
     .loyalty-program-btn {
-        margin: 20px auto 0;
-        display: block;
-        max-width: 300px;
+        margin: 20px auto 0 auto !important;
+        display: inline-block !important;
+        width: auto !important;
+        min-width: 200px !important;
     }
 }
 
@@ -4789,7 +5101,7 @@ body {
 }
 
 /* Адаптация */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
     .loyalty-features-cover {
         height: calc(100vh - 10px);
         min-height: 600px;
@@ -4837,7 +5149,7 @@ body {
 
 
 /* ===== ПЛАНШЕТЫ (769px - 1024px) ===== */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1366px) {
     
     /* ===== ШАПКА ===== */
     .desktop-nav {
@@ -5147,5 +5459,306 @@ html {
     overflow-x: hidden;
     width: 100%;
 }
+}
+
+/* Стили для кнопки "Загрузить еще" */
+.menu-catalog-loadmore {
+    display: none; /* По умолчанию скрыта, JS покажет когда нужно */
+    text-align: center;
+    margin: 40px 0 60px 0;
+    width: 100%;
+}
+
+.menu-catalog-loadmore-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background-color: #D6CCC2;
+    color: #3b2623;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.menu-catalog-loadmore-btn:hover {
+    background-color: #D6CCC2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.menu-catalog-loadmore-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .menu-catalog-loadmore {
+        margin: 30px 0 40px 0;
+    }
+    
+    .menu-catalog-loadmore-btn {
+        padding: 12px 30px;
+        font-size: 15px;
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+
+/* ===== ИСПРАВЛЕНИЕ ЦВЕТОВ ДЛЯ БЛОКА banquet-necessities-block ===== */
+.banquet-necessities-block {
+    background-color: var(--bg-accent) !important; /* Меняем с белого на бежевый */
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ ПРАВКИ ДЛЯ СОГЛАСОВАННОСТИ ===== */
+
+/* Блок "Интерьер с видом" на странице банкетов */
+.banquet-interior-block {
+    background-color: var(--bg-accent) !important;
+}
+
+/* Блок "Даже на вашей площадке" */
+.banquet-catering-block {
+    background-color: var(--bg-accent) !important;
+}
+
+/* Блок "Всё для вашего праздника" (тот самый проблемный) */
+.banquet-necessities-block {
+    background-color: var(--bg-accent) !important;
+}
+
+/* Блок "Свяжитесь с менеджером" */
+.banquet-contact-block {
+    background-color: var(--bg-accent) !important;
+}
+
+/* ===== ИСПРАВЛЕНИЕ РАЗДЕЛИТЕЛЕЙ (делаем их желтыми) ===== */
+.banquet-interior-divider,
+.banquet-format-divider,
+.banquet-catering-divider,
+.banquet-service-divider,
+.banquet-necessities-divider {
+    background-color: var(--accent-soft) !important;
+    width: 80px !important;
+    height: 3px !important;
+    opacity: 0.8;
+}
+
+/* ===== ИСПРАВЛЕНИЕ ЦВЕТА ТЕКСТА ===== */
+.banquet-interior-descr,
+.banquet-format-descr,
+.banquet-catering-descr,
+.banquet-service-descr,
+.banquet-necessities-descr {
+    color: var(--text-secondary) !important;
+}
+
+/* ===== ИСПРАВЛЕНИЕ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ ===== */
+@media screen and (max-width: 768px) {
+    .banquet-necessities-container .banquet-necessities-content {
+        background-color: transparent !important;
+    }
+    
+    .banquet-necessities-block {
+        background-color: var(--bg-accent) !important;
+    }
+}
+
+/* ===== ПРИМЕНЕНИЕ НОВОЙ ЦВЕТОВОЙ ГАММЫ ===== */
+
+/* КНОПКИ - красивые, медовые */
+.hero__btn,
+.events-section__btn,
+.review-btn,
+.menu-main-tab,
+.menu-catalog-loadmore-btn,
+.loyalty-program-btn {
+    border: 2px solid var(--accent-yellow) !important;
+    color: var(--accent-yellow) !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease !important;
+    font-weight: 600;
+}
+
+.hero__btn:hover,
+.events-section__btn:hover,
+.review-btn:hover,
+.menu-main-tab:hover,
+.menu-catalog-loadmore-btn:hover,
+.loyalty-program-btn:hover {
+    background-color: var(--accent-yellow) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--accent-yellow-dark) !important;
+}
+
+/* Активные вкладки */
+.menu-main-tab.active,
+.menu-catalog-cat.active {
+    background-color: var(--accent-yellow) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--accent-yellow) !important;
+}
+
+/* РАЗДЕЛИТЕЛИ - нежные, песочные */
+.about-divider,
+.concept-divider,
+.philosophy-divider,
+.event-divider,
+.event-divider-reverse,
+.review-divider,
+.banquet-interior-divider,
+.banquet-format-divider,
+.banquet-catering-divider,
+.banquet-service-divider,
+.banquet-necessities-divider,
+.atmosphere-divider {
+    background-color: var(--accent-yellow-light) !important;
+    width: 80px !important;
+    height: 2px !important;
+    opacity: 0.9;
+}
+
+/* ЗАГОЛОВКИ - акцент на важных словах */
+.hero__title span,
+.events-section__title strong,
+.banquet-hero__title span,
+.menu-main-heading-green {
+    color: var(--accent-yellow) !important;
+    font-weight: 600;
+}
+
+/* ИКОНКИ VK - в цвет меда */
+.social-link svg path {
+    fill: var(--accent-yellow) !important;
+    transition: fill 0.3s;
+}
+
+.social-link:hover svg path {
+    fill: var(--accent-yellow-dark) !important;
+}
+
+/* КНОПКА "НАВЕРХ" */
+.scroll-top-btn svg rect {
+    fill: var(--accent-yellow) !important;
+    fill-opacity: 0.9;
+}
+
+.scroll-top-btn:hover svg rect {
+    fill: var(--accent-yellow-dark) !important;
+}
+
+/* ЦЕНЫ В МЕНЮ */
+.menu-catalog-price {
+    color: var(--accent-yellow) !important;
+    font-weight: 700;
+}
+
+/* БЛОК СВЯЖИТЕСЬ С МЕНЕДЖЕРОМ */
+.banquet-contact-block {
+    background-color: var(--bg-accent-dark) !important;
+}
+
+.banquet-contact-title strong:last-child {
+    color: var(--accent-yellow) !important;
+}
+
+/* ТЕЛЕФОН В ШАПКЕ */
+.header__contacts-top a {
+    color: var(--accent-yellow) !important;
+}
+
+/* АКТИВНЫЕ БУЛЛЕТЫ СЛАЙДЕРА */
+.interior-slds__bullet-active {
+    background-color: var(--accent-yellow) !important;
+}
+
+/* КАРТОЧКИ МЕНЮ ПРИ НАВЕДЕНИИ */
+.menu-catalog-item:hover {
+    box-shadow: var(--shadow-hover) !important;
+}
+
+/* ФОНОВЫЕ БЛОКИ - чередуем белый и бежевый */
+.concept-block,
+.business-lunch-block,
+.certificate-block,
+.loyalty-program-block {
+    background-color: var(--bg-accent) !important;
+}
+
+/* БЛОК НА СТРАНИЦЕ БАНКЕТОВ */
+.banquet-interior-block,
+.banquet-catering-block,
+.banquet-necessities-block {
+    background-color: var(--bg-accent) !important;
+}
+
+/* АРОЧКИ ПРОКРУТКИ */
+.hero__arrow-svg,
+.banquet-hero__arrow-svg,
+.loyalty-hero__arrow-svg {
+    fill: var(--accent-yellow) !important;
+    opacity: 0.9;
+}
+
+/* ===== ДЛЯ ОЧЕНЬ БОЛЬШИХ ЭКРАНОВ ===== */
+@media screen and (min-width: 1800px) {
+    .about-wrapper,
+    .concept-container,
+    .philosophy-wrapper,
+    .business-lunch-container,
+    .atmosphere-container,
+    .interior-title-container,
+    .interior-slds,
+    .events-title-container,
+    .event-wrapper,
+    .event-container-reverse,
+    .certificate-container,
+    .review-container,
+    .footer-container,
+    .menu-container,
+    .menu-main-tabs-container,
+    .menu-main-title-container,
+    .menu-disclaimer-container,
+    .menu-catalog-container,
+    .banquet-hero__container,
+    .banquet-title-container,
+    .banquet-interior-container,
+    .banquet-format-container,
+    .banquet-catering-container,
+    .banquet-service-container,
+    .banquet-highlight-container,
+    .banquet-necessities-container,
+    .banquet-contact-container,
+    .banquet-wrapper,
+    .loyalty-hero__container,
+    .loyalty-program-container,
+    .loyalty-features__container {
+        padding: 0 60px; /* Еще больше отступы на очень широких экранах */
+    }
+    
+    /* Увеличиваем размеры шрифтов для очень больших экранов */
+    .hero__title {
+        font-size: 96px;
+    }
+    
+    .hero__title span {
+        font-size: 106px;
+    }
+    
+    .menu-main-heading {
+        font-size: 132px;
+        line-height: 120px;
+    }
+    
+    .interior-title,
+    .events-main-title {
+        font-size: 96px;
+    }
 }
 
