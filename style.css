@@ -29,51 +29,65 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Foglihten';
+    src: url('fonts/FoglihtenNo06_076.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 :root {
-
+    /* БЕЛЫЙ ФОН (основной) */
     --bg-primary: #FFFFFF;        /* Чистый белый */
-    --bg-secondary: #FCF9F5;      /* Теплый белый */
+    --bg-secondary: #FCF9F5;      /* Теплый белый для фона секций */
     
-
-    --bg-accent: #FDF3E0;         /* ☆ СЛИВОЧНО-КРЕМОВЫЙ (основной бежевый) */
-    --bg-accent-dark: #F8E8D4;    /* Глубокий кремовый для контраста */
+    /* БЕЖЕВЫЕ АКЦЕНТЫ (для разнообразия) */
+    --bg-accent: #FDF3E0;         /* Сливочно-кремовый */
+    --bg-accent-dark: #F8E8D4;    /* Глубокий кремовый */
     --bg-accent-light: #FFF9F0;   /* Очень светлый бежевый */
     
-  
-    --text-primary: #4A4A4A;      /* Мягкий серый */
+    /* ТЕКСТ (классический серый) */
+    --text-primary: #4A4A4A;      /* Мягкий серый для основного текста */
     --text-secondary: #6B5E4E;    /* Теплый коричневато-серый */
     --text-light: #9B8F82;        /* Светлый текст */
     
-
-    --accent-yellow: #F2C75C;      /* ☆ МЕДОВЫЙ (кнопки, иконки) */
-    --accent-yellow-light: #FAD98F; /* Светло-желтый для разделителей */
-    --accent-yellow-dark: #E5AD3A;  /* Для наведения */
-    --accent-yellow-pale: #FFF0D0;  /* Очень бледный желтый для подложек */
-
+    /* ОСНОВНОЙ АКЦЕНТ - НЕЖНЫЙ ПЕРСИКОВЫЙ */
+    --accent-peach: #efd2ce;       /* ☆ ОСНОВНОЙ ЦВЕТ для обводки и акцентов */
+    --accent-peach-light: #f5e3df; /* Светло-персиковый для разделителей */
+    --accent-peach-dark: #d6b5b0;  /* Темно-персиковый для наведения */
+    
+    /* ДОПОЛНИТЕЛЬНЫЕ ЦВЕТА */
     --beige-soft: #EFE1D1;         /* Для границ */
     --beige-light: #F5E6D8;        /* Для фонов */
-    --beige-warm: #E8D5C0;         /* Теплый бежевый */
-
     --border-light: #EDE5DC;
-    --shadow: 0 8px 25px rgba(242, 199, 92, 0.05); /* Легкая желтая тень */
-    --shadow-hover: 0 12px 35px rgba(242, 199, 92, 0.12);
-  
+    
+    /* ТЕНИ (с оттенком персикового) */
+    --shadow: 0 8px 25px rgba(239, 210, 206, 0.15);
+    --shadow-hover: 0 12px 35px rgba(239, 210, 206, 0.25);
+    
+    /* ЗАТЕМНЕНИЯ */
     --overlay-light: rgba(74, 74, 74, 0.1);
     --overlay-medium: rgba(74, 74, 74, 0.5);
     --overlay-dark: rgba(74, 74, 74, 0.8);
 }
-html, body {
+
+
+body {
     overflow-x: hidden;
     width: 100%;
-    position: relative;
 }
 
+html {
+    width: 100%;
+}
+
+/* Уберите position: relative */
 .page {
     width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-    position: relative;
+    background-color: var(--bg-primary);
 }
 
 body {
@@ -96,7 +110,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(74, 74, 74, 0.8);
+    background-image: url('https://avatars.mds.yandex.net/get-sprav-products/5373629/2a00000184a5fae17ecbac64e95b741d5433/M_height');
     padding: 15px 40px;
     width: 100%;
 }
@@ -474,7 +488,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://static.vecteezy.com/system/resources/previews/014/718/450/non_2x/cozy-cafe-or-restaurant-with-fireplace-and-windows-free-vector.jpg');
+    background-image: url('image/Фото.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -494,7 +508,7 @@ body {
 .hero__content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 1800px;
     padding: 0 20px;
 }
 
@@ -504,15 +518,20 @@ body {
     line-height: 1.1;
     margin-bottom: 20px;
     color: #ffffff;
-    font-family: 'Century Gothic', 'Arial', sans-serif;
+    font-family: 'Foglihten', 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
+    text-transform: capitalize; /* Первая буква заглавная */
+    letter-spacing: 2px;
 }
 
-
 .hero__title span {
-    font-weight: 700;
     display: block;
-    color: var(--accent-soft);
+    color: var(--accent-peach); /* Персиковый цвет */
     font-size: 82px;
+    font-family: 'Foglihten', 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Легкая тень для объема */
 }
 
 .hero__welcome {
@@ -5162,6 +5181,19 @@ body {
 
 /* ===== ПЛАНШЕТЫ (769px - 1024px) ===== */
 @media screen and (min-width: 769px) and (max-width: 1366px) {
+        /* ВРЕМЕННАЯ ДИАГНОСТИКА - принудительно фиксируем все размеры */
+        body {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            overflow-x: hidden;
+        }
+        
+    
     
     /* ===== ШАПКА ===== */
     .desktop-nav {
@@ -5201,7 +5233,7 @@ body {
     }
     
     /* ===== МОБИЛЬНОЕ МЕНЮ НА ПЛАНШЕТАХ ===== */
-    .mobile-menu {
+   .mobile-menu {
         position: fixed;
         top: 0;
         right: -100%;
@@ -5219,7 +5251,7 @@ body {
     }
     
     .mobile-menu__container {
-        padding: 20px 30px 50px;
+        padding: 20px 20px 40px;
         width: 100%;
         max-width: 100%;
         margin: 0;
@@ -5230,18 +5262,145 @@ body {
     }
     
     .mobile-menu__close-wrapper {
+        display: flex;
+        justify-content: flex-end;
         width: 100%;
-        max-width: 100%;
-        padding: 15px 0 20px;
+        padding: 10px 0 20px;
         margin-bottom: 20px;
         border-bottom: 1px solid var(--border-light);
+        box-sizing: border-box;
     }
+    
+    .mobile-menu__close {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        z-index: 1001;
+    }
+    
+    .mobile-menu__close span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: var(--text-primary);
+        margin: 3px 0;
+        transition: all 0.3s ease;
+        border-radius: 3px;
+    }
+    
+    .mobile-menu.active .mobile-menu__close span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu.active .mobile-menu__close span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu.active .mobile-menu__close span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    .mobile-menu__logo-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    
+    .mobile-menu__logo-img {
+        height: 45px;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .mobile-menu__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 40px;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .mobile-menu__list li {
+        margin-bottom: 20px;
+    }
+    
+    .mobile-menu__list a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: opacity 0.3s;
+        display: inline-block;
+    }
+    
+    .mobile-menu__list a:hover {
+        opacity: 0.8;
+    }
+    
+    .mobile-menu__contacts {
+        text-align: center;
+        color: var(--text-primary);
+        border-top: 1px solid rgba(74, 74, 74, 0.1);
+        padding-top: 25px;
+        margin-top: auto;
+    }
+    
+    .mobile-menu__phone {
+        display: block;
+        color: var(--accent-yellow);
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    
+    .mobile-menu__address {
+        font-size: 17px;
+        margin-bottom: 5px;
+        color: var(--text-secondary);
+    }
+    
+    .mobile-menu__hours {
+        font-size: 15px;
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    .mobile-menu__social {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 15px;
+    }
+    
+    .mobile-menu__social .social-link svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .mobile-menu__social .social-link svg path {
+        fill: var(--accent-yellow);
+    }
+
     
     /* Запрещаем скролл body при открытом меню */
     body.menu-open {
         overflow: hidden;
     }
-    
+
     /* ===== БЛОК 3: О НАС ===== */
     .about-container {
         flex-direction: column !important;
@@ -5461,16 +5620,7 @@ body {
         background-repeat: no-repeat !important;
     }
     /* Сброс для body */
-body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-}
 
-html {
-    overflow-x: hidden;
-    width: 100%;
-}
 }
 
 /* Стили для кнопки "Загрузить еще" */
@@ -5584,139 +5734,135 @@ html {
 
 /* ===== ПРИМЕНЕНИЕ НОВОЙ ЦВЕТОВОЙ ГАММЫ ===== */
 
-/* КНОПКИ - красивые, медовые */
+/* ===== СТИЛИ ДЛЯ ВСЕХ КНОПОК ===== */
+
+/* ===== СТИЛИ ДЛЯ ВСЕХ КНОПОК (ТОЛЬКО ОБВОДКА) ===== */
 .hero__btn,
 .events-section__btn,
 .review-btn,
 .menu-main-tab,
 .menu-catalog-loadmore-btn,
-.loyalty-program-btn {
-    border: 2px solid var(--accent-yellow) !important;
-    color: var(--accent-yellow) !important;
-    background-color: transparent !important;
+.loyalty-program-btn,
+.banquet-contact-btn {
+    background-color: transparent !important;  /* Прозрачный фон */
+    color: var(--accent-peach) !important;      /* Текст цвета обводки */
+    border: 2px solid var(--accent-peach) !important; /* Обводка */
     transition: all 0.3s ease !important;
     font-weight: 600;
+    border-radius: 40px;
+    padding: 14px 40px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(239, 210, 206, 0.1); /* Легкая тень */
 }
 
+/* Эффект при наведении - заполнение цветом */
 .hero__btn:hover,
 .events-section__btn:hover,
 .review-btn:hover,
 .menu-main-tab:hover,
 .menu-catalog-loadmore-btn:hover,
-.loyalty-program-btn:hover {
-    background-color: var(--accent-yellow) !important;
-    color: var(--text-primary) !important;
-    border-color: var(--accent-yellow-dark) !important;
+.loyalty-program-btn:hover,
+.banquet-contact-btn:hover {
+    background-color: var(--accent-peach) !important; /* Заполняется цветом */
+    color: var(--text-primary) !important;            /* Текст темнеет */
+    border-color: var(--accent-peach) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(239, 210, 206, 0.3);
 }
 
 /* Активные вкладки */
 .menu-main-tab.active,
 .menu-catalog-cat.active {
-    background-color: var(--accent-yellow) !important;
+    background-color: var(--accent-peach) !important;
     color: var(--text-primary) !important;
-    border-color: var(--accent-yellow) !important;
+    border-color: var(--accent-peach) !important;
 }
 
-/* РАЗДЕЛИТЕЛИ - нежные, песочные */
+/* ===== РАЗДЕЛИТЕЛИ ===== */
 .about-divider,
 .concept-divider,
 .philosophy-divider,
 .event-divider,
 .event-divider-reverse,
 .review-divider,
+.atmosphere-divider,
 .banquet-interior-divider,
 .banquet-format-divider,
 .banquet-catering-divider,
 .banquet-service-divider,
-.banquet-necessities-divider,
-.atmosphere-divider {
-    background-color: var(--accent-yellow-light) !important;
+.banquet-necessities-divider {
+    background-color: var(--accent-peach-light) !important;
     width: 80px !important;
-    height: 2px !important;
+    height: 3px !important;
     opacity: 0.9;
+    margin: 0 auto 25px;
 }
 
-/* ЗАГОЛОВКИ - акцент на важных словах */
-.hero__title span,
-.events-section__title strong,
-.banquet-hero__title span,
-.menu-main-heading-green {
-    color: var(--accent-yellow) !important;
-    font-weight: 600;
-}
-
-/* ИКОНКИ VK - в цвет меда */
+/* ===== ИКОНКИ И АКЦЕНТЫ ===== */
 .social-link svg path {
-    fill: var(--accent-yellow) !important;
+    fill: var(--accent-peach) !important;
     transition: fill 0.3s;
 }
 
 .social-link:hover svg path {
-    fill: var(--accent-yellow-dark) !important;
+    fill: var(--accent-peach-dark) !important;
 }
 
-/* КНОПКА "НАВЕРХ" */
+/* Кнопка "Наверх" */
 .scroll-top-btn svg rect {
-    fill: var(--accent-yellow) !important;
+    fill: var(--accent-peach) !important;
     fill-opacity: 0.9;
 }
 
 .scroll-top-btn:hover svg rect {
-    fill: var(--accent-yellow-dark) !important;
+    fill: var(--accent-peach-dark) !important;
 }
 
-/* ЦЕНЫ В МЕНЮ */
-.menu-catalog-price {
-    color: var(--accent-yellow) !important;
-    font-weight: 700;
-}
-
-/* БЛОК СВЯЖИТЕСЬ С МЕНЕДЖЕРОМ */
-.banquet-contact-block {
-    background-color: var(--bg-accent-dark) !important;
-}
-
-.banquet-contact-title strong:last-child {
-    color: var(--accent-yellow) !important;
-}
-
-/* ТЕЛЕФОН В ШАПКЕ */
-.header__contacts-top a {
-    color: var(--accent-yellow) !important;
-}
-
-/* АКТИВНЫЕ БУЛЛЕТЫ СЛАЙДЕРА */
-.interior-slds__bullet-active {
-    background-color: var(--accent-yellow) !important;
-}
-
-/* КАРТОЧКИ МЕНЮ ПРИ НАВЕДЕНИИ */
-.menu-catalog-item:hover {
-    box-shadow: var(--shadow-hover) !important;
-}
-
-/* ФОНОВЫЕ БЛОКИ - чередуем белый и бежевый */
-.concept-block,
-.business-lunch-block,
-.certificate-block,
-.loyalty-program-block {
-    background-color: var(--bg-accent) !important;
-}
-
-/* БЛОК НА СТРАНИЦЕ БАНКЕТОВ */
-.banquet-interior-block,
-.banquet-catering-block,
-.banquet-necessities-block {
-    background-color: var(--bg-accent) !important;
-}
-
-/* АРОЧКИ ПРОКРУТКИ */
+/* Арочки прокрутки */
 .hero__arrow-svg,
 .banquet-hero__arrow-svg,
 .loyalty-hero__arrow-svg {
-    fill: var(--accent-yellow) !important;
+    fill: var(--accent-peach) !important;
     opacity: 0.9;
 }
+
+/* Цены в меню */
+.menu-catalog-price {
+    color: var(--accent-peach) !important;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Телефон в шапке */
+.header__contacts-top a {
+    color: var(--accent-peach) !important;
+}
+
+/* Активные буллеты слайдера */
+.interior-slds__bullet-active {
+    background-color: var(--accent-peach) !important;
+}
+
+/* Выделение важных слов */
+.events-section__title strong,
+.banquet-hero__title span,
+.menu-main-heading-green {
+    color: var(--accent-peach) !important;
+}
+
+/* Карточки меню при наведении */
+.menu-catalog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover) !important;
+}
+
+
+
+
+
+
 
 /* ===== ДЛЯ ОЧЕНЬ БОЛЬШИХ ЭКРАНОВ ===== */
 @media screen and (min-width: 1800px) {
@@ -5774,3 +5920,50 @@ html {
     }
 }
 
+
+
+
+
+
+/* Крупные заголовки (жирные, плакатные) */
+.hero__title,
+.atm,
+.menu-main-title,
+.events-main-title,
+.events-section__title,
+.event-title-line,
+.event-title-reverse,
+.interior-title,
+.menu-main-heading,
+.banquet-hero__title,
+.loyalty-hero__title {
+    font-family: 'Foglihten', 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Средние заголовки */
+.about-title-line,
+.concept-title,
+.mer,
+.philosophy-title,
+.business-lunch-title,
+.banquet-interior-title,
+.banquet-catering-title,
+.banquet-format-title,
+.banquet-necessities-title, 
+.banquet-service-title {
+    font-family: 'Foglihten', 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Мелкие заголовки */
+.certificate-title,
+.review-title,
+.loyalty-program-title {
+    font-family: 'Foglihten', 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
