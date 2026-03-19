@@ -5922,17 +5922,10 @@ body {
 
 
 
-
-
-
 /* Крупные заголовки (жирные, плакатные) */
 .hero__title,
-.atm,
+
 .menu-main-title,
-.events-main-title,
-.events-section__title,
-.event-title-line,
-.event-title-reverse,
 .interior-title,
 .menu-main-heading,
 .banquet-hero__title,
@@ -5947,6 +5940,11 @@ body {
 .about-title-line,
 .concept-title,
 .mer,
+.atm,
+.events-main-title,
+.events-section__title,
+.event-title-line,
+.event-title-reverse,
 .philosophy-title,
 .business-lunch-title,
 .banquet-interior-title,
@@ -5954,7 +5952,7 @@ body {
 .banquet-format-title,
 .banquet-necessities-title, 
 .banquet-service-title {
-    font-family: 'Foglihten', 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
+    font-family: 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
 }
