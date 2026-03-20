@@ -54,10 +54,9 @@
     --text-secondary: #6B5E4E;    /* Теплый коричневато-серый */
     --text-light: #9B8F82;        /* Светлый текст */
     
-    /* ОСНОВНОЙ АКЦЕНТ - НЕЖНЫЙ ПЕРСИКОВЫЙ */
-    --accent-peach: #efd2ce;       /* ☆ ОСНОВНОЙ ЦВЕТ для обводки и акцентов */
-    --accent-peach-light: #f5e3df; /* Светло-персиковый для разделителей */
-    --accent-peach-dark: #d6b5b0;  /* Темно-персиковый для наведения */
+    --accent-peach: #ffc8c0;       /* Ярче на 20% */
+    --accent-peach-light: #ffe0da; /* Светлый вариант */
+    --accent-peach-dark: #e6a99f;  /* Темный для наведения */
     
     /* ДОПОЛНИТЕЛЬНЫЕ ЦВЕТА */
     --beige-soft: #EFE1D1;         /* Для границ */
@@ -2315,6 +2314,200 @@ body {
     }
 }
 
+/* ===== МОДАЛЬНОЕ ОКНО ДЛЯ ВЫБОРА УСТРОЙСТВА ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-device {
+    max-width: 420px;
+    width: 90%;
+    background: white;
+    border-radius: 32px;
+    padding: 0;
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-device .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 28px;
+    color: #9B9B9B;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    z-index: 10;
+}
+
+.modal-device .modal-close:hover {
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.modal-device .modal-header {
+    padding: 32px 32px 16px 32px;
+    text-align: center;
+    border-bottom: none;
+}
+
+.modal-device .modal-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #2C2C2C;
+    margin: 0 0 8px 0;
+    font-family: 'Century Gothic', sans-serif;
+    letter-spacing: -0.2px;
+}
+
+.modal-device .modal-header p {
+    font-size: 14px;
+    color: #8A8A8A;
+    margin: 0;
+    font-weight: 400;
+}
+
+.modal-device .modal-body {
+    padding: 16px 32px 32px 32px;
+}
+
+.device-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin: 8px 0 20px;
+}
+
+.device-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: transparent;
+    border: 1px solid #E8E8E8;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex: 1;
+    cursor: pointer;
+}
+
+.device-btn svg {
+    width: 44px;
+    height: 44px;
+    color: #5A5A5A;
+    transition: all 0.25s ease;
+}
+
+.device-btn span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #5A5A5A;
+    transition: all 0.25s ease;
+}
+
+.device-btn:hover {
+    border-color: var(--accent-peach);
+    background: rgba(239, 210, 206, 0.08);
+    transform: translateY(-2px);
+}
+
+.device-btn:hover svg,
+.device-btn:hover span {
+    color: var(--accent-peach);
+}
+
+.modal-note {
+    font-size: 12px;
+    color: #A8A8A8;
+    text-align: center;
+    margin: 20px 0 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #F0F0F0;
+    letter-spacing: 0.2px;
+}
+
+/* Адаптация для мобильных */
+@media screen and (max-width: 480px) {
+    .modal-device {
+        max-width: 340px;
+        border-radius: 28px;
+    }
+    
+    .modal-device .modal-header {
+        padding: 28px 24px 12px 24px;
+    }
+    
+    .modal-device .modal-header h2 {
+        font-size: 22px;
+    }
+    
+    .modal-device .modal-header p {
+        font-size: 13px;
+    }
+    
+    .modal-device .modal-body {
+        padding: 12px 24px 28px 24px;
+    }
+    
+    .device-buttons {
+        gap: 12px;
+    }
+    
+    .device-btn {
+        padding: 16px 16px;
+        gap: 10px;
+    }
+    
+    .device-btn svg {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .device-btn span {
+        font-size: 14px;
+    }
+    
+    .modal-note {
+        font-size: 11px;
+        margin-top: 16px;
+    }
+}
+
 /* Мобильные устройства (до 768px) */
 @media screen and (max-width: 768px) {
     
@@ -3003,6 +3196,22 @@ body {
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     line-height: 1.2;
     font-family: 'Century Gothic', 'Arial', sans-serif;
+}
+@media screen and (max-width: 768px) {
+    .menu-main-title {
+        font-size: 36px;
+        white-space: normal; /* Разрешаем перенос */
+        word-break: break-word; /* Переносим длинные слова */
+        padding: 0 15px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    .menu-main-title {
+        font-size: 28px;
+        line-height: 1.3;
+    }
 }
 
 /* Вкладки верхнего уровня */

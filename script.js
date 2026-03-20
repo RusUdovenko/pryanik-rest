@@ -340,54 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    function initLoadMore(container) {
-        const loadMoreBtn = container.querySelector('.menu-catalog-loadmore-btn');
-        if (!loadMoreBtn) return;
-        
-        const catalogGrid = container.querySelector('.menu-catalog-grid');
-        if (!catalogGrid) return;
-        
-        const allItems = Array.from(catalogGrid.querySelectorAll('.menu-catalog-item'));
-        if (allItems.length === 0) return;
-        
-        let itemsPerPage = 8;
-        let currentlyShown = itemsPerPage;
-        
-        allItems.forEach((item, index) => {
-            if (index < itemsPerPage) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-        
-        loadMoreBtn.addEventListener('click', function() {
-            const nextItems = currentlyShown + itemsPerPage;
-            const itemsToShow = Math.min(nextItems, allItems.length);
-            
-            for (let i = currentlyShown; i < itemsToShow; i++) {
-                allItems[i].style.display = 'block';
-            }
-            
-            currentlyShown = itemsToShow;
-            
-            if (currentlyShown >= allItems.length) {
-                loadMoreBtn.style.display = 'none';
-            }
-        });
-    }
-    
-    const tabContents = document.querySelectorAll('.menu-tab-content');
-    tabContents.forEach(content => {
-        initLoadMore(content);
-    });
-    
-    const mainContainer = document.querySelector('.menu-catalog-block');
-    if (mainContainer && !mainContainer.closest('.menu-tab-content')) {
-        initLoadMore(mainContainer);
-    }
-});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -456,3 +409,55 @@ if (mobileLogoLink && burgerButton && mobileMenu) {
     });
 }
 
+
+        // Открытие модального окна при клике на кнопку
+        const loyaltyBtn = document.querySelector('.loyalty-program-btn');
+        const modal = document.getElementById('deviceModal');
+        const closeModal = document.getElementById('closeDeviceModal');
+        const iphoneBtn = document.getElementById('iphoneBtn');
+        const androidBtn = document.getElementById('androidBtn');
+
+        if (loyaltyBtn) {
+            loyaltyBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        function closeDeviceModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (closeModal) {
+            closeModal.addEventListener('click', closeDeviceModal);
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeDeviceModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeDeviceModal();
+            }
+        });
+
+        if (iphoneBtn) {
+            iphoneBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://apps.apple.com/ru/app/%D0%BF%D1%80%D1%8F%D0%BD%D0%B8%D0%BA-%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B7%D0%B0%D0%B2%D0%BE%D0%B4%D1%81%D0%BA/id6744920649?l=en-GB', '_blank');
+                closeDeviceModal();
+            });
+        }
+
+        if (androidBtn) {
+            androidBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://play.google.com/store/apps/details?id=com.remarked.pryanik.app', '_blank');
+                closeDeviceModal();
+            });
+        }
