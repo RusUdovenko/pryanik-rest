@@ -4963,30 +4963,6 @@ body {
     opacity: 0.8;
 }
 
-/* Адаптация */
-@media screen and (max-width: 1366px) {
-    .loyalty-hero__title {
-        font-size: 60px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .loyalty-hero {
-        min-height: 500px;
-    }
-    .loyalty-hero__title {
-        font-size: 42px;
-    }
-    .loyalty-hero__title br {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .loyalty-hero__title {
-        font-size: 32px;
-    }
-}
 
 /* Блок 2: Карточка программы */
 .loyalty-program-block {
