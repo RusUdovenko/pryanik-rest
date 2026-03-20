@@ -2285,32 +2285,6 @@ body {
     .loyalty-hero__title {
         font-size: 52px;
     }
-
-    /* Адаптация для планшетов */
-@media screen and (max-width: 1024px) {
-    .loyalty-hero__title {
-        font-size: 52px;
-    }
-}
-
-/* Адаптация для мобильных */
-@media screen and (max-width: 768px) {
-    .loyalty-hero__title {
-        font-size: 36px;
-        white-space: normal;
-        word-break: break-word;
-        padding: 0 15px;
-        line-height: 1.3;
-    }
-}
-
-/* Для очень маленьких экранов */
-@media screen and (max-width: 480px) {
-    .loyalty-hero__title {
-        font-size: 28px;
-        padding: 0 12px;
-    }
-}
     
     .loyalty-program-text-col {
         margin-left: -80px;
@@ -4988,7 +4962,30 @@ body {
     fill: #ffffff;
     opacity: 0.8;
 }
+@media screen and (max-width: 1024px) {
+    .loyalty-hero__title {
+        font-size: 52px;
+    }
+}
 
+/* Адаптация для мобильных */
+@media screen and (max-width: 768px) {
+    .loyalty-hero__title {
+        font-size: 36px;
+        white-space: normal;
+        word-break: break-word;
+        padding: 0 15px;
+        line-height: 1.3;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    .loyalty-hero__title {
+        font-size: 28px;
+        padding: 0 12px;
+    }
+}
 
 /* Блок 2: Карточка программы */
 .loyalty-program-block {
