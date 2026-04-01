@@ -1,137 +1,178 @@
+// ===== СЛАЙДЕР ИНТЕРЬЕРА (работает на всех устройствах) =====
 document.addEventListener('DOMContentLoaded', function() {
-    
-    var track = document.querySelector('.interior-slds__items-wrapper');
-    var slides = document.querySelectorAll('.interior-slds__item');
-    var prevBtn = document.querySelector('.interior-slds__arrow-left');
-    var nextBtn = document.querySelector('.interior-slds__arrow-right');
-    var bullets = document.querySelectorAll('.interior-slds__bullet');
-    var isMobile = window.innerWidth <= 768;
+    const track = document.querySelector('.interior-slds__items-wrapper');
+    const slides = document.querySelectorAll('.interior-slds__item');
+    const prevBtn = document.querySelector('.interior-slds__arrow-left');
+    const nextBtn = document.querySelector('.interior-slds__arrow-right');
+    const bullets = document.querySelectorAll('.interior-slds__bullet');
     
     if (!track || !slides.length) return;
-    
-    if (isMobile) {
-        track.style.transform = 'none';
-        track.style.transition = 'none';
+
+    let currentIndex = 0;
+    let isMobile = window.innerWidth <= 768;
+    let startX = 0;
+    let isDragging = false;
+    let startTransform = 0;
+    let currentTransform = 0;
+
+    // Получаем полную ширину слайда с учетом gap
+    function getSlideWidth() {
+        const slide = slides[0];
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || 0;
+        return slide.offsetWidth + gap;
+    }
+
+    // Получаем смещение для центрирования
+    function getCenterOffset() {
+        const container = track.parentElement;
+        const slideWidth = getSlideWidth();
+        const containerWidth = container.offsetWidth;
+        const slideRealWidth = slides[0].offsetWidth;
+        return (containerWidth - slideRealWidth) / 2;
+    }
+
+    // Функция прокрутки к слайду (с ограничением)
+    function scrollToSlide(index, withAnimation = true) {
+        if (index < 0) index = 0;
+        if (index >= slides.length) index = slides.length - 1;
         
-        for (var k = 0; k < bullets.length; k++) {
-            bullets[k].onclick = (function(index) {
-                return function() {
-                    var slide = slides[index];
-                    if (slide) {
-                        slide.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'nearest',
-                            inline: 'center'
-                        });
-                    }
-                    
-                    for (var j = 0; j < bullets.length; j++) {
-                        bullets[j].classList.remove('interior-slds__bullet-active');
-                    }
-                    bullets[index].classList.add('interior-slds__bullet-active');
-                };
-            })(k);
+        currentIndex = index;
+        const slideWidth = getSlideWidth();
+        const centerOffset = getCenterOffset();
+        
+        // Расчет смещения
+        let transformX = centerOffset - (currentIndex * slideWidth);
+        
+        // ВАЖНО: ограничиваем максимальное смещение, чтобы не уехать за последний слайд
+        const maxRightOffset = centerOffset - ((slides.length - 1) * slideWidth);
+        transformX = Math.min(centerOffset, Math.max(transformX, maxRightOffset));
+        
+        if (!withAnimation) {
+            track.style.transition = 'none';
+        } else {
+            track.style.transition = 'transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1)';
         }
         
-        track.addEventListener('scroll', function() {
-            var scrollPosition = track.scrollLeft;
-            var slideWidth = slides[0].offsetWidth + 15;
-            
-            var activeIndex = Math.round(scrollPosition / slideWidth);
-            if (activeIndex >= slides.length) activeIndex = slides.length - 1;
-            
-            for (var j = 0; j < bullets.length; j++) {
-                bullets[j].classList.remove('interior-slds__bullet-active');
-            }
-            if (bullets[activeIndex]) {
-                bullets[activeIndex].classList.add('interior-slds__bullet-active');
-            }
+        track.style.transform = `translateX(${transformX}px)`;
+        currentTransform = transformX;
+        
+        if (!withAnimation) {
+            track.offsetHeight; // force reflow
+            track.style.transition = '';
+        }
+        
+        // Обновляем активные классы
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active-slide', i === currentIndex);
         });
         
-        return;
-    }
-    
-    var currentIndex = 0;
-    var slideWidth = 700;
-    var gap = 30;
-    
-    function updateArrows() {
-        if (currentIndex === 0) {
-            prevBtn.style.display = 'none';
-        } else {
-            prevBtn.style.display = 'flex';
-        }
+        bullets.forEach((bullet, i) => {
+            bullet.classList.toggle('interior-slds__bullet-active', i === currentIndex);
+        });
         
-        if (currentIndex === slides.length - 1) {
-            nextBtn.style.display = 'none';
-        } else {
-            nextBtn.style.display = 'flex';
+        // Обновляем видимость кнопок
+        if (prevBtn) {
+            prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
+        }
+        if (nextBtn) {
+            nextBtn.style.display = currentIndex === slides.length - 1 ? 'none' : 'flex';
         }
     }
-    
-    function centerActiveSlide() {
-        var offset = currentIndex * (slideWidth + gap);
-        var container = track.parentElement;
-        var containerWidth = container.offsetWidth;
-        var centerOffset = (containerWidth - slideWidth) / 2;
-        
-        track.style.transform = 'translateX(' + (centerOffset - offset) + 'px)';
-        
-        for (var i = 0; i < slides.length; i++) {
-            if (i === currentIndex) {
-                slides[i].classList.add('active-slide');
-            } else {
-                slides[i].classList.remove('active-slide');
-            }
-        }
-        
-        for (var j = 0; j < bullets.length; j++) {
-            if (j === currentIndex) {
-                bullets[j].classList.add('interior-slds__bullet-active');
-            } else {
-                bullets[j].classList.remove('interior-slds__bullet-active');
-            }
-        }
-        
-        updateArrows();
-    }
-    
+
+    // Обработчики кнопок
     if (nextBtn) {
-        nextBtn.onclick = function() {
+        nextBtn.onclick = function(e) {
+            e.preventDefault();
             if (currentIndex < slides.length - 1) {
-                currentIndex++;
-                centerActiveSlide();
+                scrollToSlide(currentIndex + 1, true);
             }
         };
     }
     
     if (prevBtn) {
-        prevBtn.onclick = function() {
+        prevBtn.onclick = function(e) {
+            e.preventDefault();
             if (currentIndex > 0) {
-                currentIndex--;
-                centerActiveSlide();
+                scrollToSlide(currentIndex - 1, true);
             }
         };
     }
     
-    for (var k = 0; k < bullets.length; k++) {
-        bullets[k].onclick = (function(index) {
-            return function() {
-                currentIndex = index;
-                centerActiveSlide();
-            };
-        })(k);
-    }
-    
-    window.addEventListener('resize', function() {
-        if (window.innerWidth <= 768) {
-            location.reload();
-        } else {
-            centerActiveSlide();
-        }
+    // Обработчики буллетов
+    bullets.forEach((bullet, i) => {
+        bullet.onclick = function(e) {
+            e.preventDefault();
+            scrollToSlide(i, true);
+        };
     });
     
-    centerActiveSlide();
+    // ===== СВАЙП ДЛЯ МОБИЛЬНЫХ =====
+    function onDragStart(e) {
+        isDragging = true;
+        startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+        startTransform = currentTransform;
+        track.style.transition = 'none';
+    }
+    
+    function onDragMove(e) {
+        if (!isDragging) return;
+        const currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const diff = currentX - startX;
+        let newTransform = startTransform + diff;
+        
+        // Ограничиваем перетаскивание
+        const slideWidth = getSlideWidth();
+        const centerOffset = getCenterOffset();
+        const maxLeft = centerOffset;
+        const maxRight = centerOffset - ((slides.length - 1) * slideWidth);
+        newTransform = Math.min(maxLeft, Math.max(newTransform, maxRight));
+        
+        track.style.transform = `translateX(${newTransform}px)`;
+        currentTransform = newTransform;
+    }
+    
+    function onDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.transition = 'transform 0.3s ease';
+        
+        // Определяем, к какому слайду ближе
+        const slideWidth = getSlideWidth();
+        const centerOffset = getCenterOffset();
+        
+        let newIndex = Math.round((centerOffset - currentTransform) / slideWidth);
+        newIndex = Math.min(slides.length - 1, Math.max(0, newIndex));
+        
+        scrollToSlide(newIndex, true);
+    }
+    
+    // Добавляем обработчики для свайпа
+    track.addEventListener('mousedown', onDragStart);
+    window.addEventListener('mousemove', onDragMove);
+    window.addEventListener('mouseup', onDragEnd);
+    
+    track.addEventListener('touchstart', onDragStart, { passive: false });
+    window.addEventListener('touchmove', onDragMove, { passive: false });
+    window.addEventListener('touchend', onDragEnd);
+    
+    // Адаптация при изменении размера окна
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            scrollToSlide(currentIndex, false);
+        }, 150);
+    });
+    
+    // Запуск
+    setTimeout(function() {
+        scrollToSlide(0, false);
+    }, 100);
+    
+    window.addEventListener('load', function() {
+        scrollToSlide(currentIndex, false);
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {

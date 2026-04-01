@@ -487,7 +487,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('image/Фото.png');
+    background-image: url('https://2.downloader.disk.yandex.ru/preview/6b9c9aad61fdd6a9031249a1906575dff30d3133b988ce1b60191caddeac717c/inf/wdnDuxJUzC3znj-3T5dd6DQ57Cn2CcKrSVv2wcE1l34F3TPL9Bu8mLaElrF3cpQo7NuBDkOIJ6OyUlmka0wesw%3D%3D?uid=1883080586&filename=NEW00318.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1883080586&tknv=v3&size=1897x956');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -6172,4 +6172,38 @@ body {
     font-family: 'Foglihten', 'Pacifico', 'Century Gothic', 'Arial', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
+}
+
+
+/* Очищаем конфликтующие стили для слайдера */
+.interior-slds__items-wrapper {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    will-change: transform;
+}
+
+/* Убираем дублирующиеся правила для мобильных */
+@media screen and (max-width: 768px) {
+    .interior-slds__items-wrapper {
+        gap: 15px; /* Уменьшаем отступ на мобильных */
+    }
+    
+    /* Обеспечиваем плавность на тач-устройствах */
+    .interior-slds__item {
+        cursor: grab;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .interior-slds__item:active {
+        cursor: grabbing;
+    }
+}
+
+/* Скрываем кнопки только если они действительно не нужны */
+@media screen and (max-width: 480px) {
+    .interior-slds__arrow-container {
+        display: none; /* На очень маленьких экранах кнопки могут мешать */
+    }
 }
