@@ -475,11 +475,11 @@ if (mobileLogoLink && burgerButton && mobileMenu) {
             closeModal.addEventListener('click', closeDeviceModal);
         }
 
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeDeviceModal();
-            }
-        });
+        // modal.addEventListener('click', function(e) {
+        //     if (e.target === modal) {
+        //         closeDeviceModal();
+        //     }
+        // });
 
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
