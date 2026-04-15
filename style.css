@@ -6242,3 +6242,214 @@ body {
     transform: translateY(-50%);  /* Центрируем по вертикали */
 }
 
+
+/* ===== ИСПРАВЛЕНИЕ ДЛЯ ИЗОБРАЖЕНИЙ НА МОБИЛЬНЫХ - ПОЛНОЕ ОТОБРАЖЕНИЕ ===== */
+
+/* Для банкетной страницы */
+@media screen and (max-width: 768px) {
+    .banquet-hero {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .banquet-hero__carrier {
+        position: relative;
+        height: auto;
+        padding-bottom: 75%;
+    }
+    
+    .banquet-hero__image-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    
+    .banquet-hero__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .banquet-hero__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Для страницы лояльности */
+@media screen and (max-width: 768px) {
+    .loyalty-hero {
+        height: auto;
+        min-height: auto;
+        border-radius: 30px;
+    }
+    
+    .loyalty-hero__carrier {
+        position: relative;
+        height: auto;
+        padding-bottom: 75%;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    
+    .loyalty-hero__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .loyalty-hero__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Для планшетов (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .banquet-hero__carrier,
+    .loyalty-hero__carrier {
+        padding-bottom: 56.25%;
+    }
+    
+    .banquet-hero__image-bg,
+    .loyalty-hero__carrier {
+        background-size: contain !important;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    .banquet-hero__carrier,
+    .loyalty-hero__carrier {
+        padding-bottom: 100%;
+    }
+}
+
+/* ===== ИСПРАВЛЕНИЕ - РАСТЯГИВАЕМ ИЗОБРАЖЕНИЕ ПО ШИРИНЕ ===== */
+
+@media screen and (max-width: 768px)  {
+    .banquet-hero__image-bg,
+    .loyalty-hero__carrier {
+        background-size: 100% 100% !important;
+        background-position: center !important;
+    }
+}
+
+/* ===== ИСПРАВЛЕНИЕ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) ===== */
+
+/* Для банкетной страницы на планшетах */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .banquet-hero {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .banquet-hero__carrier {
+        position: relative;
+        height: auto;
+        padding-bottom: 56.25%; /* 16:9 для планшетов */
+    }
+    
+    .banquet-hero__image-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100% !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    .banquet-hero__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .banquet-hero__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Для страницы лояльности на планшетах */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .loyalty-hero {
+        height: auto;
+        min-height: auto;
+        border-radius: 40px;
+    }
+    
+    .loyalty-hero__carrier {
+        position: relative;
+        height: auto;
+        padding-bottom: 56.25%; /* 16:9 для планшетов */
+        background-size: 100% 100% !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    .loyalty-hero__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .loyalty-hero__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Для больших планшетов (1024px - 1200px) */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .banquet-hero__carrier,
+    .loyalty-hero__carrier {
+        padding-bottom: 56.25%;
+    }
+    
+    .banquet-hero__image-bg,
+    .loyalty-hero__carrier {
+        background-size: 100% 100% !important;
+        background-position: center !important;
+    }
+}
