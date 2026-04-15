@@ -94,7 +94,7 @@
         <div class="menu-cover-outer animate-on-scroll">
             <div class="menu-cover">
                         <div class="menu-cover__carrier">
-                            <video autoplay muted loop playsinline class="menu-cover__video">
+                            <video autoplay muted loop playsinline webkit-playsinline class="menu-cover__video">
                                 <source src="video/Меню.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -249,7 +249,17 @@
 <script src="js/menu-loader.js"></script>
 
 <script src="script.js"></script>
-   
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var video = document.querySelector('.menu-cover__video');
+    if (video) {
+        video.muted = true;
+        video.play().catch(function(e) {
+            console.log('Auto-play prevented:', e);
+        });
+    }
+});
+</script>
 
 </body>
 </html>
