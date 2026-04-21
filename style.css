@@ -6247,6 +6247,7 @@ body {
 /* Мобильные устройства (до 768px) */
 @media screen and (max-width: 768px) {
     .banquet-hero {
+        
         height: 50vh;
         min-height: 400px;
     }
@@ -6320,8 +6321,9 @@ body {
     
     .banquet-hero__image-bg,
     .loyalty-hero__carrier {
-        background-size: cover !important;
+        background-size: 100% 400px !important;
         background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 }
 
@@ -6339,3 +6341,4 @@ body {
         background-position: center center !important;
     }
 }
+
