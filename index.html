@@ -129,10 +129,10 @@
 
         <section id="events-block" class="events-section animate-on-scroll">
     <div class="events-section__video-container">
-        <video class="events-section__video" autoplay loop muted playsinline>
-            <source src="video/.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
+            <video class="events-section__video" autoplay loop muted playsinline webkit-playsinline>
+                <source src="video/Меню.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
         <div class="events-section__overlay"></div>
         <div class="events-section__content">
             <h2 class="events-section__title">
@@ -206,7 +206,7 @@
                                 <h2 class="philosophy-title">В основе меню ресторана «Пряник» - домашний уют и забота. Мы создали пространство, где главные герои - дети и семейные традиции.</h2>
                                 <p class="philosophy-subtitle">Каждый раздел меню дарит радость совместного времяпрепровождения: от мастер-классов до праздничных бонусов в день рождения.</p>
                                 <div class="philosophy-divider"></div>
-                                <p class="philosophy-description">Наше меню - это гармония вкуса и пользы: европейской классики и авторских блюд до полезных позиций для самых маленьких.</p>
+                                <p class="philosophy-description">Наше меню - это гармония вкуса и пользы: от европейской классики и авторских блюд до полезных позиций для самых маленьких.</p>
                             </div>
                         </div>
                     </div>
@@ -224,7 +224,7 @@
                             <div class="business-lunch-box">
                                 <h2 class="business-lunch-title">Бизнес-ланч в будние дни</h2>
                                 <div class="business-lunch-divider"></div>
-                                <p class="business-lunch-description">В нашем ресторане не только вкусно, но и быстро, мы разработали сбалансированное меню специально для тех, кто хочет насладиться сытным обедом в течении рабочего дня!</p>
+                                <p class="business-lunch-description">В нашем ресторане не только вкусно, но и быстро, мы разработали сбалансированное меню специально для тех, кто хочет насладиться сытным обедом в течение рабочего дня!</p>
                             </div>
                         </div>
                     </div>
@@ -498,5 +498,30 @@
         </button>
     </div>
     <script src="script.js"></script>
+
+
+    <script>
+    // Принудительное автовоспроизведение видео для мобильных
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.querySelector('.events-section__video');
+        if (video) {
+            video.muted = true;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            
+            // Попытка воспроизведения
+            var playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function(error) {
+                    console.log('Autoplay prevented:', error);
+                    // Повторная попытка при взаимодействии с пользователем
+                    document.body.addEventListener('touchstart', function() {
+                        video.play();
+                    }, { once: true });
+                });
+            }
+        }
+    });
+</script>
 </body>
 </html>
