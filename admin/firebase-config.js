@@ -1,13 +1,7 @@
 // firebase-config.js
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAKbHhFyMd4SBfhKQyKQcX7P1cf15nWjSA",
-    authDomain: "pryanikmenu.firebaseapp.com",
-    projectId: "pryanikmenu",
-    storageBucket: "pryanikmenu.firebasestorage.app",
-    messagingSenderId: "652491042024",
-    appId: "1:652491042024:web:41fd28fcc4fd4fe7b86d5d"
-};
+
 
 firebase.initializeApp(firebaseConfig);
 
